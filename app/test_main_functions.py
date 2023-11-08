@@ -76,11 +76,9 @@ def test_find_min():
 # Kevin Artunduaga
 def test_find_mean():
     """Test case for the find_mean function."""
-
     # Case 1 
     numbers = [1, 2, 3, 4, 5]
     result = find_mean(numbers)
-
     assert result == 3.0
 
     # Case 2
