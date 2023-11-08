@@ -5,7 +5,7 @@ import pytest
 
 from unittest import mock
 
-from .main import add, divide, validate_no_null_values, db_query, subtract
+from .main import add, divide, validate_no_null_values, db_query, subtract, find_mode
 
 
 def test_add():
@@ -89,8 +89,11 @@ def test_find_median():
 
 # Juan Camilo Vargas
 def test_find_mode():
-    # TODO: write the tests cases for the find_mode function
-    pass
+    """Test case to find the mode of a list of numbers"""
+    assert find_mode([1, 2, 2, 3, 4]) == 2
+    assert find_mode([1, 1, 2, 2, 3, 3, 4, 4]) in [1, 2, 3, 4]
+    assert find_mode([1, 2, 3, 4, 5]) == 1
+    assert find_mode([]) is None
 
 
 # Samuel Pinzon
