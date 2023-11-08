@@ -95,8 +95,38 @@ def is_even(x: int) -> bool:
 
 # Andres enriquez
 def find_max(numbers: list) -> int:
-    # TODO: write function to find the maximum number in a list
-    pass
+    """
+    Encuentra el número máximo en una lista de números.
+
+    Args:
+        numbers (list): Una lista de números.
+
+    Returns:
+        int: El número máximo encontrado en la lista.
+
+    Raises:
+        ValueError: Si la lista está vacía.
+
+    Examples:
+        >>> find_max([3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5])
+        9
+
+        >>> find_max([])
+        Traceback (most recent call last):
+            ...
+        ValueError: La lista está vacía. No se puede encontrar el número máximo.
+    """
+    if not numbers:
+        raise ValueError("La lista está vacía. No se puede encontrar el número máximo.")
+
+    max_number = numbers[0]  # Suponemos que el primer número es el máximo inicialmente.
+
+    for number in numbers:
+        if number > max_number:
+            max_number = number
+
+    return max_number
+
 
 
 # Juan Felipe Zambrano
