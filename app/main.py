@@ -1,5 +1,6 @@
 """ main functions to explain unit testing"""
 
+import numpy as np
 import pandas as pd
 
 
@@ -126,8 +127,25 @@ def find_mean(numbers: list) -> float:
 
 # Camila Cardona
 def find_median(numbers: list) -> float:
-    # TODO: write function to find the median of a list of numbers
-    pass
+    """Function to find the median of a list of numbers
+    
+    Parameters
+    ----------
+    numbers : list
+        list of numbers
+        
+    Returns
+    -------
+    float
+        median of the list of numbers
+    
+    """
+
+    numbers_array = np.array(numbers)
+
+    median = np.median(numbers_array)
+
+    return median
 
 
 # Juan Camilo Vargas
@@ -161,9 +179,31 @@ def find_mode(numbers: list) -> int:
 
 # Samuel Pinzon
 def factorial(n: int) -> int:
-    # TODO: write function to find the factorial of a number
-    pass
+    """
+    Function to calculate the factorial of a number
 
+    Parameters
+    ----------
+    n : int
+        number to calculate the factorial
+    
+    Returns
+    -------
+    int
+        factorial of n
+
+    Raises
+    ------
+    ValueError
+        If n is negative
+    """
+    if n < 0:
+        raise ValueError("n must be a non-negative integer")
+    
+    result = 1
+    for i in range(1, n + 1):
+        result *= i
+    return result
 
 # Atenea Rojas
 def is_prime(n: int) -> bool:
@@ -173,21 +213,53 @@ def is_prime(n: int) -> bool:
 
 # Gustavo Chipatinza
 def is_palindrome(word: str) -> bool:
-    # TODO: write function to check if a word is a palindrome
-    pass
+    """
+    Determine if a given word or phrase is a palindrome.
+
+    Parameters:
+    ----------
+    word : str
+        The word or phrase to be checked for palindromicity.
+
+    Returns:
+    -------
+    bool
+        True if the input is a palindrome, False otherwise.
+    """
+    cleaned_word = word.replace(" ", "").lower()
+    return cleaned_word == cleaned_word[::-1]
+    
 
 
 # Santiago Murgueitio
 def reverse_string(string: str) -> str:
-    # TODO: write function to reverse a string
-    pass
+    """
+    Reverse a given string.
+
+    Args:
+        string (str): The input string to be reversed.
+
+    Returns:
+        str: The reversed string.
+
+    Example:
+        input -> reverse_string("Hello, World!")
+        output -> '!dlroW ,olleH'
+    """
+    return string[::-1]
 
 
 # Maria Angelica Portocarrero
 def list_sum(numbers: list) -> int:
-    # TODO: write function to sum a list of numbers
-    pass
+    """ This method calculates the sum of a list of numbers.
 
+    Arguments:
+        numbers (list): A list of numbers.
+
+    Returns:
+        int: The sum of the numbers in the list.
+    """
+    return sum(numbers)
 
 # Angie Manzano
 def list_product(numbers: list) -> int:

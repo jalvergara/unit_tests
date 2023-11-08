@@ -5,7 +5,8 @@ import pytest
 
 from unittest import mock
 
-from .main import add, divide, validate_no_null_values, db_query, subtract, find_mode
+
+from .main import add, divide, validate_no_null_values, db_query, subtract, reverse_string, list_sum, find_median, is_palindrome, factorial, find_mode
 
 
 def test_add():
@@ -83,8 +84,27 @@ def test_find_mean():
 
 # Camila Cardona
 def test_find_median():
-    # TODO: write the tests cases for the find_median function
-    pass
+    """Test case for the find_median function."""
+
+    # Create a list with an odd number of elements
+    numbers = [1, 3, 2, 4, 5]
+    expected_result = 3.0
+    result = find_median(numbers)
+    assert result == expected_result
+
+    # Create a list with an even number of elements
+    numbers = [1, 2, 3, 4]
+    expected_result = 2.5
+    result = find_median(numbers)
+    assert result == expected_result
+
+    # Create a list with no elements
+    numbers = []
+    try:
+        find_median(numbers)
+    except ValueError as e:
+        assert str(e) == "No median for empty list"
+
 
 
 # Juan Camilo Vargas
@@ -98,8 +118,18 @@ def test_find_mode():
 
 # Samuel Pinzon
 def test_factorial():
-    # TODO: write the tests cases for the factorial function
-    pass
+    """Test cases for the factorial function."""
+    assert factorial(0) == 1
+    assert factorial(1) == 1
+    assert factorial(2) == 2
+    assert factorial(3) == 6
+    assert factorial(4) == 24
+    assert factorial(5) == 120
+
+    with pytest.raises(
+        ValueError
+    ):
+        factorial(-1)
 
 
 # Atenea Rojas
@@ -110,21 +140,68 @@ def test_is_prime():
 
 # Gustavo Chipatinza
 def test_is_palindrome():
-    # TODO: write the tests cases for the is_palindrome function
-    pass
+    """Test cases for the is_palindrome function."""
+    assert is_palindrome("racecar") is True  # esta frase corta es un palindrome
+    assert is_palindrome("hello") is False   # no es un palindrome
+    assert is_palindrome("A man a plan a canal Panama") is True  # esta frase larga es un palindrome
+    # Casos de cadenas vacías
+    assert is_palindrome("") is True  # Una cadena vacía es un palíndromo
+    assert is_palindrome(" ") is True  # Espacio en blanco es un palíndromo
+    assert is_palindrome("  ") is True  # Espacios en blanco múltiples son un palíndromo
+    # Casos de mayúsculas y minúsculas
+    assert is_palindrome("racecar") is True  # Minúsculas, un palíndromo
+    assert is_palindrome("Racecar") is True  # Primera letra mayúscula, un palíndromo
+    assert is_palindrome("rAcEcar") is True  # Varias mayúsculas, un palíndromo
+    # Casos con caracteres especiales
+    assert is_palindrome("!A man a plan a canal Panama!") is True  # Puntuación y mayúsculas
+    assert is_palindrome("Was it a car or a cat I saw?") is False  # Otra frase con puntuación
+    assert is_palindrome("No 'x' in Nixon") is False  # Comillas simples
+    #casos numeros
+    assert is_palindrome("12321") is True  # Números, un palíndromo
+    assert is_palindrome("123221821") is False  # Números, un palíndromo
+
+
 
 
 # Santiago Murgueitio
 def test_reverse_string():
-    # TODO: write the tests cases for the reverse_string function
-    pass
-
+    """
+    Test cases for the reverse_string function.
+    1) A regular string
+    2) An empty string
+    3) A string of numbers
+    4) A string with Spaces, numbers, and different characteres
+    """
+    assert reverse_string('Hi there!') == '!ereht iH'
+    assert reverse_string('') == ''
+    assert reverse_string('1234') == '4321'
+    assert reverse_string('SoY  Un $Tr1ng') == 'gn1rT$ nU  YoS'
 
 # Maria Angelica Portocarrero
 def test_list_sum():
-    # TODO: write the tests cases for the list_sum function
-    pass
+    # Test case 1: List is empty
+    assert list_sum([]) == 0
 
+    # Test case 2: List with one single number
+    assert list_sum([10]) == 10
+
+    # Test case 3: List with positive numbers
+    assert list_sum([1, 2, 3, 4, 5]) == 15
+
+    # Test case 4: List with negative numbers
+    assert list_sum([-1, -2, -3, -4, -5]) == -15
+
+    # Test case 5: List with mixed positive and negative numbers
+    assert list_sum([-1, 2, -3, 4, -5]) == -3    
+
+    # Test case 6: List with decimals
+    assert list_sum([0.5, 1.5, 2.5]) == 4.5
+
+    # Test case 7: List with both integers and decimals
+    assert list_sum([1, 2.5, 3, 4.5]) == 11.0
+
+    # Test case 8: List with large numbers
+    assert list_sum([10**6, 2 * 10**6, 3 * 10**6]) == 6 * 10**6
 
 # Angie Manzano
 def test_list_product():
