@@ -5,7 +5,7 @@ import pytest
 
 from unittest import mock
 
-from .main import add, divide, validate_no_null_values, db_query
+from .main import add, divide, validate_no_null_values, db_query,find_min
 
 
 def test_add():
@@ -69,8 +69,11 @@ def test_find_max():
 
 # Juan Felipe Zambrano
 def test_find_min():
-    # TODO: write the tests cases for the find_min function
-    pass
+    assert find_min([3, 7, 2, 9, 5]) == 2
+    assert find_min([-10, -5, -8, -3, -12]) == -12
+    assert find_min([-20, 10, 5, -3, 0]) == -20
+    # write the tests cases for the find_min function
+test_find_min()
 
 
 # Kevin Artunduaga
