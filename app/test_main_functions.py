@@ -5,7 +5,7 @@ import pytest
 
 from unittest import mock
 
-from .main import add, divide, validate_no_null_values, db_query
+from .main import add, divide, validate_no_null_values, db_query, subtract, is_prime
 
 
 def test_add():
@@ -45,8 +45,10 @@ def test_db_query():
 
 # Alejandro Vergara
 def test_subtract():
-    # TODO: write the tests cases for the subtract function
-    pass
+    """Test cases for the subtract function."""
+    assert subtract(2, 3) == -1
+    assert subtract(-1, 1) == -2
+    assert subtract(0, 0) == 0
 
 
 # Samuel Patino
@@ -99,8 +101,11 @@ def test_factorial():
 
 # Atenea Rojas
 def test_is_prime():
-    # TODO: write the tests cases for the is_prime function
-    pass
+    """Test cases for the is_prime function."""
+    assert is_prime(7) == True
+    assert is_prime(10) == False
+    assert is_prime(2) == True
+    assert is_prime(-5) == False
 
 
 # Gustavo Chipatinza
