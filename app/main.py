@@ -1,5 +1,6 @@
 """ main functions to explain unit testing"""
 
+import numpy as np
 import pandas as pd
 
 
@@ -113,8 +114,25 @@ def find_mean(numbers: list) -> float:
 
 # Camila Cardona
 def find_median(numbers: list) -> float:
-    # TODO: write function to find the median of a list of numbers
-    pass
+    """Function to find the median of a list of numbers
+    
+    Parameters
+    ----------
+    numbers : list
+        list of numbers
+        
+    Returns
+    -------
+    float
+        median of the list of numbers
+    
+    """
+
+    numbers_array = np.array(numbers)
+
+    median = np.median(numbers_array)
+
+    return median
 
 
 # Juan Camilo Vargas
