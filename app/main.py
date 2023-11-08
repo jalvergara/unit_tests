@@ -168,8 +168,22 @@ def is_prime(n: int) -> bool:
 
 # Gustavo Chipatinza
 def is_palindrome(word: str) -> bool:
-    # TODO: write function to check if a word is a palindrome
-    pass
+    """
+    Determine if a given word or phrase is a palindrome.
+
+    Parameters:
+    ----------
+    word : str
+        The word or phrase to be checked for palindromicity.
+
+    Returns:
+    -------
+    bool
+        True if the input is a palindrome, False otherwise.
+    """
+    cleaned_word = word.replace(" ", "").lower()
+    return cleaned_word == cleaned_word[::-1]
+    
 
 
 # Santiago Murgueitio

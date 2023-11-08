@@ -5,7 +5,9 @@ import pytest
 
 from unittest import mock
 
-from .main import add, divide, validate_no_null_values, db_query, subtract, reverse_string, list_sum, find_median
+from .main import add, divide, validate_no_null_values, db_query, subtract,reverse_string, list_sum, find_median,is_palindrome
+
+
 
 def test_add():
     """Test cases for the add function."""
@@ -125,8 +127,27 @@ def test_is_prime():
 
 # Gustavo Chipatinza
 def test_is_palindrome():
-    # TODO: write the tests cases for the is_palindrome function
-    pass
+    """Test cases for the is_palindrome function."""
+    assert is_palindrome("racecar") is True  # esta frase corta es un palindrome
+    assert is_palindrome("hello") is False   # no es un palindrome
+    assert is_palindrome("A man a plan a canal Panama") is True  # esta frase larga es un palindrome
+    # Casos de cadenas vacías
+    assert is_palindrome("") is True  # Una cadena vacía es un palíndromo
+    assert is_palindrome(" ") is True  # Espacio en blanco es un palíndromo
+    assert is_palindrome("  ") is True  # Espacios en blanco múltiples son un palíndromo
+    # Casos de mayúsculas y minúsculas
+    assert is_palindrome("racecar") is True  # Minúsculas, un palíndromo
+    assert is_palindrome("Racecar") is True  # Primera letra mayúscula, un palíndromo
+    assert is_palindrome("rAcEcar") is True  # Varias mayúsculas, un palíndromo
+    # Casos con caracteres especiales
+    assert is_palindrome("!A man a plan a canal Panama!") is True  # Puntuación y mayúsculas
+    assert is_palindrome("Was it a car or a cat I saw?") is False  # Otra frase con puntuación
+    assert is_palindrome("No 'x' in Nixon") is False  # Comillas simples
+    #casos numeros
+    assert is_palindrome("12321") is True  # Números, un palíndromo
+    assert is_palindrome("123221821") is False  # Números, un palíndromo
+
+
 
 
 # Santiago Murgueitio
