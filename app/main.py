@@ -156,9 +156,31 @@ def find_mode(numbers: list) -> int:
 
 # Samuel Pinzon
 def factorial(n: int) -> int:
-    # TODO: write function to find the factorial of a number
-    pass
+    """
+    Function to calculate the factorial of a number
 
+    Parameters
+    ----------
+    n : int
+        number to calculate the factorial
+    
+    Returns
+    -------
+    int
+        factorial of n
+
+    Raises
+    ------
+    ValueError
+        If n is negative
+    """
+    if n < 0:
+        raise ValueError("n must be a non-negative integer")
+    
+    result = 1
+    for i in range(1, n + 1):
+        result *= i
+    return result
 
 # Atenea Rojas
 def is_prime(n: int) -> bool:
