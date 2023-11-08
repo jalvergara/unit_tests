@@ -150,8 +150,31 @@ def find_median(numbers: list) -> float:
 
 # Juan Camilo Vargas
 def find_mode(numbers: list) -> int:
-    # TODO: write function to find the mode of a list of numbers
-    pass
+    """
+    Function to find the mode(s) in a list of integers.
+
+    Parameters
+    ----------
+    data : list[int]
+        List of integers to find the mode(s) from.
+
+    Returns
+    -------
+    int
+        If multiple values have the same highest frequency, it returns the smallest one.
+        If the list is empty, it returns None.
+    """
+
+    if not numbers:
+        return None
+
+    num_frequency = {}
+    for num in numbers:
+        num_frequency[num] = num_frequency.get(num, 0) + 1
+
+    max_frequency = max(num_frequency.values())
+    modes = [num for num, freq in num_frequency.items() if freq == max_frequency]
+    return min(modes)
 
 
 # Samuel Pinzon
