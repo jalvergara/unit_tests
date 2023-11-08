@@ -5,7 +5,7 @@ import pytest
 
 from unittest import mock
 
-from .main import add, divide, validate_no_null_values, db_query, subtract, list_sum
+from .main import add, divide, validate_no_null_values, db_query, subtract, reverse_string, list_sum
 
 
 def test_add():
@@ -113,9 +113,17 @@ def test_is_palindrome():
 
 # Santiago Murgueitio
 def test_reverse_string():
-    # TODO: write the tests cases for the reverse_string function
-    pass
-
+    """
+    Test cases for the reverse_string function.
+    1) A regular string
+    2) An empty string
+    3) A string of numbers
+    4) A string with Spaces, numbers, and different characteres
+    """
+    assert reverse_string('Hi there!') == '!ereht iH'
+    assert reverse_string('') == ''
+    assert reverse_string('1234') == '4321'
+    assert reverse_string('SoY  Un $Tr1ng') == 'gn1rT$ nU  YoS'
 
 # Maria Angelica Portocarrero
 def test_list_sum():
