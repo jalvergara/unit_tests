@@ -143,8 +143,20 @@ def is_palindrome(word: str) -> bool:
 
 # Santiago Murgueitio
 def reverse_string(string: str) -> str:
-    # TODO: write function to reverse a string
-    pass
+    """
+    Reverse a given string.
+
+    Args:
+        string (str): The input string to be reversed.
+
+    Returns:
+        str: The reversed string.
+
+    Example:
+        input -> reverse_string("Hello, World!")
+        output -> '!dlroW ,olleH'
+    """
+    return string[::-1]
 
 
 # Maria Angelica Portocarrero
