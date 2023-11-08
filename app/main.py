@@ -192,9 +192,15 @@ def reverse_string(string: str) -> str:
 
 # Maria Angelica Portocarrero
 def list_sum(numbers: list) -> int:
-    # TODO: write function to sum a list of numbers
-    pass
+    """ This method calculates the sum of a list of numbers.
 
+    Arguments:
+        numbers (list): A list of numbers.
+
+    Returns:
+        int: The sum of the numbers in the list.
+    """
+    return sum(numbers)
 
 # Angie Manzano
 def list_product(numbers: list) -> int:

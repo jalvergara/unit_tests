@@ -5,10 +5,7 @@ import pytest
 
 from unittest import mock
 
-
-from .main import add, divide, validate_no_null_values, db_query, subtract, reverse_string, find_median
-
-
+from .main import add, divide, validate_no_null_values, db_query, subtract, reverse_string, list_sum, find_median
 
 def test_add():
     """Test cases for the add function."""
@@ -148,9 +145,29 @@ def test_reverse_string():
 
 # Maria Angelica Portocarrero
 def test_list_sum():
-    # TODO: write the tests cases for the list_sum function
-    pass
+    # Test case 1: List is empty
+    assert list_sum([]) == 0
 
+    # Test case 2: List with one single number
+    assert list_sum([10]) == 10
+
+    # Test case 3: List with positive numbers
+    assert list_sum([1, 2, 3, 4, 5]) == 15
+
+    # Test case 4: List with negative numbers
+    assert list_sum([-1, -2, -3, -4, -5]) == -15
+
+    # Test case 5: List with mixed positive and negative numbers
+    assert list_sum([-1, 2, -3, 4, -5]) == -3    
+
+    # Test case 6: List with decimals
+    assert list_sum([0.5, 1.5, 2.5]) == 4.5
+
+    # Test case 7: List with both integers and decimals
+    assert list_sum([1, 2.5, 3, 4.5]) == 11.0
+
+    # Test case 8: List with large numbers
+    assert list_sum([10**6, 2 * 10**6, 3 * 10**6]) == 6 * 10**6
 
 # Angie Manzano
 def test_list_product():
