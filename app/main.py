@@ -77,8 +77,21 @@ def db_query() -> str:
 
 # Alejandro Vergara
 def subtract(a: int, b: int) -> int:
-    # TODO: write function to subtract two numbers
-    pass
+    """_summary_
+
+    Parameters
+    ----------
+    a : int
+        parameter1
+    b : int
+        parameter2
+
+    Returns
+    -------
+    int
+        a-b
+    """
+    return a - b
 
 
 # Samuel Patino
