@@ -6,7 +6,7 @@ import pytest
 from unittest import mock
 
 
-from .main import add, divide, validate_no_null_values, db_query, subtract, reverse_string, list_sum, find_median, is_palindrome, factorial, find_mode
+from .main import add, divide, validate_no_null_values, db_query, subtract, reverse_string, list_sum, find_median, is_palindrome, factorial, find_mode, list_product
 
 
 def test_add():
@@ -205,5 +205,10 @@ def test_list_sum():
 
 # Angie Manzano
 def test_list_product():
-    # TODO: write the tests cases for the list_product function
-    pass
+    """Test cases for the list_product function."""
+    assert list_product([2,2,3]) == 12
+    assert list_product([-1,2,5]) == -10
+    assert list_product([0,2,5]) == 0
+    assert list_product([1,2,3,4,5]) == 120
+    assert list_product([]) == 1
+    assert list_product([10,3,None]) == 30

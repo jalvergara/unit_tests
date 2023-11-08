@@ -263,5 +263,23 @@ def list_sum(numbers: list) -> int:
 
 # Angie Manzano
 def list_product(numbers: list) -> int:
-    # TODO: write function to multiply a list of numbers
-    pass
+    """Function to multiply a list of numbers
+
+    Parameters
+    ----------
+    numbers : list
+        list with numbers to multiply
+
+    Returns
+    -------
+    int
+        [a * b * c * d * ... * n]
+    """
+    product = 1
+    listNumbers = []
+    for i in numbers:
+         if i != None :
+            listNumbers.append(i)
+    for i in listNumbers:
+         product = product * i
+    return product
