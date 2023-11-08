@@ -5,7 +5,7 @@ import pytest
 
 from unittest import mock
 
-from .main import add, divide, validate_no_null_values, db_query
+from .main import add, divide, validate_no_null_values, db_query, factorial
 
 
 def test_add():
@@ -93,8 +93,18 @@ def test_find_mode():
 
 # Samuel Pinzon
 def test_factorial():
-    # TODO: write the tests cases for the factorial function
-    pass
+    """Test cases for the factorial function."""
+    assert factorial(0) == 1
+    assert factorial(1) == 1
+    assert factorial(2) == 2
+    assert factorial(3) == 6
+    assert factorial(4) == 24
+    assert factorial(5) == 120
+
+    with pytest.raises(
+        ValueError
+    ):
+        factorial(-1)
 
 
 # Atenea Rojas
