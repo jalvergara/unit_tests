@@ -109,8 +109,38 @@ def is_even(x: int) -> bool:
 
 # Andres enriquez
 def find_max(numbers: list) -> int:
-    # TODO: write function to find the maximum number in a list
-    pass
+    """
+    Encuentra el número máximo en una lista de números.
+
+    Args:
+        numbers (list): Una lista de números.
+
+    Returns:
+        int: El número máximo encontrado en la lista.
+
+    Raises:
+        ValueError: Si la lista está vacía.
+
+    Examples:
+        >>> find_max([3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5])
+        9
+
+        >>> find_max([])
+        Traceback (most recent call last):
+            ...
+        ValueError: La lista está vacía. No se puede encontrar el número máximo.
+    """
+    if not numbers:
+        raise ValueError("La lista está vacía. No se puede encontrar el número máximo.")
+
+    max_number = numbers[0]  # Suponemos que el primer número es el máximo inicialmente.
+
+    for number in numbers:
+        if number > max_number:
+            max_number = number
+
+    return max_number
+
 
 
 # Juan Felipe Zambrano
@@ -150,15 +180,60 @@ def find_median(numbers: list) -> float:
 
 # Juan Camilo Vargas
 def find_mode(numbers: list) -> int:
-    # TODO: write function to find the mode of a list of numbers
-    pass
+    """
+    Function to find the mode(s) in a list of integers.
+
+    Parameters
+    ----------
+    data : list[int]
+        List of integers to find the mode(s) from.
+
+    Returns
+    -------
+    int
+        If multiple values have the same highest frequency, it returns the smallest one.
+        If the list is empty, it returns None.
+    """
+
+    if not numbers:
+        return None
+
+    num_frequency = {}
+    for num in numbers:
+        num_frequency[num] = num_frequency.get(num, 0) + 1
+
+    max_frequency = max(num_frequency.values())
+    modes = [num for num, freq in num_frequency.items() if freq == max_frequency]
+    return min(modes)
 
 
 # Samuel Pinzon
 def factorial(n: int) -> int:
-    # TODO: write function to find the factorial of a number
-    pass
+    """
+    Function to calculate the factorial of a number
 
+    Parameters
+    ----------
+    n : int
+        number to calculate the factorial
+    
+    Returns
+    -------
+    int
+        factorial of n
+
+    Raises
+    ------
+    ValueError
+        If n is negative
+    """
+    if n < 0:
+        raise ValueError("n must be a non-negative integer")
+    
+    result = 1
+    for i in range(1, n + 1):
+        result *= i
+    return result
 
 # Atenea Rojas
 def is_prime(n: int) -> bool:
