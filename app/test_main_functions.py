@@ -5,8 +5,7 @@ import pytest
 
 from unittest import mock
 
-
-from .main import add, divide, validate_no_null_values, db_query, subtract, reverse_string, list_sum, find_median, is_palindrome, factorial, find_mode, list_product
+from .main import add, divide, validate_no_null_values, db_query, subtract, reverse_string, list_sum, find_median, is_palindrome, factorial, find_mode, find_max, is_prime, list_product
 
 
 def test_add():
@@ -65,9 +64,30 @@ def test_is_even():
 
 
 # Andres enriquez
+'''Pruebas para la función find_max'''
 def test_find_max():
-    # TODO: write the tests cases for the find_max function
-    pass
+    '''Prueba 1: Verificar si encuentra el número máximo en una lista no vacía'''
+    numbers1 = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5]
+    result1 = find_max(numbers1)
+    assert result1 == 9  
+
+    '''Prueba 2: Verificar si maneja correctamente una lista vacía'''
+    numbers2 = []
+    try:
+        result2 = find_max(numbers2)
+        assert False  
+    except ValueError:
+        assert True  
+
+    '''Prueba 3: Verificar si maneja correctamente una lista con un solo elemento'''
+    numbers3 = [42]
+    result3 = find_max(numbers3)
+    assert result3 == 42  
+
+    '''Prueba 4: Verificar si encuentra el número máximo en una lista con números negativos'''
+    numbers4 = [-3, -1, -4, -1, -5, -9, -2, -6, -5, -3, -5]
+    result4 = find_max(numbers4)
+    assert result4 == -1  
 
 
 # Juan Felipe Zambrano
@@ -134,8 +154,11 @@ def test_factorial():
 
 # Atenea Rojas
 def test_is_prime():
-    # TODO: write the tests cases for the is_prime function
-    pass
+    """Test cases for the is_prime function."""
+    assert is_prime(7) == True
+    assert is_prime(10) == False
+    assert is_prime(2) == True
+    assert is_prime(-5) == False
 
 
 # Gustavo Chipatinza
