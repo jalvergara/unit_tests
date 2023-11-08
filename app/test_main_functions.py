@@ -5,7 +5,7 @@ import pytest
 
 from unittest import mock
 
-from .main import add, divide, validate_no_null_values, db_query, reverse_string
+from .main import add, divide, validate_no_null_values, db_query, subtract, reverse_string
 
 
 def test_add():
@@ -45,8 +45,10 @@ def test_db_query():
 
 # Alejandro Vergara
 def test_subtract():
-    # TODO: write the tests cases for the subtract function
-    pass
+    """Test cases for the subtract function."""
+    assert subtract(2, 3) == -1
+    assert subtract(-1, 1) == -2
+    assert subtract(0, 0) == 0
 
 
 # Samuel Patino
