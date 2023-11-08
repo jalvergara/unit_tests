@@ -237,8 +237,27 @@ def factorial(n: int) -> int:
 
 # Atenea Rojas
 def is_prime(n: int) -> bool:
-    # TODO: write function to check if a number is prime
-    pass
+    """
+    This function checks whether or not a given integer is prime.
+
+    Parameter
+    ----------
+    n : int
+       Integer number to check primality for.
+
+    Returns
+    -------
+    bool
+        True if the input parameter is prime, False otherwise.
+    """
+    if n <= 1:
+        return False
+
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+
+    return True
 
 
 # Gustavo Chipatinza

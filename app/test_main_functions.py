@@ -4,7 +4,8 @@ import pandas as pd
 import pytest
 
 from unittest import mock
-from .main import add, divide, validate_no_null_values, db_query, subtract, reverse_string, list_sum, find_median, is_palindrome, factorial, find_mode, find_max
+
+from .main import add, divide, validate_no_null_values, db_query, subtract, reverse_string, list_sum, find_median, is_palindrome, factorial, find_mode, find_max, is_prime
 
 
 def test_add():
@@ -153,8 +154,11 @@ def test_factorial():
 
 # Atenea Rojas
 def test_is_prime():
-    # TODO: write the tests cases for the is_prime function
-    pass
+    """Test cases for the is_prime function."""
+    assert is_prime(7) == True
+    assert is_prime(10) == False
+    assert is_prime(2) == True
+    assert is_prime(-5) == False
 
 
 # Gustavo Chipatinza
