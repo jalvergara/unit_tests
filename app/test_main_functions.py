@@ -5,7 +5,9 @@ import pytest
 
 from unittest import mock
 
-from .main import add, divide, validate_no_null_values, db_query, subtract, reverse_string
+
+from .main import add, divide, validate_no_null_values, db_query, subtract, reverse_string, find_median
+
 
 
 def test_add():
@@ -83,8 +85,27 @@ def test_find_mean():
 
 # Camila Cardona
 def test_find_median():
-    # TODO: write the tests cases for the find_median function
-    pass
+    """Test case for the find_median function."""
+
+    # Create a list with an odd number of elements
+    numbers = [1, 3, 2, 4, 5]
+    expected_result = 3.0
+    result = find_median(numbers)
+    assert result == expected_result
+
+    # Create a list with an even number of elements
+    numbers = [1, 2, 3, 4]
+    expected_result = 2.5
+    result = find_median(numbers)
+    assert result == expected_result
+
+    # Create a list with no elements
+    numbers = []
+    try:
+        find_median(numbers)
+    except ValueError as e:
+        assert str(e) == "No median for empty list"
+
 
 
 # Juan Camilo Vargas
