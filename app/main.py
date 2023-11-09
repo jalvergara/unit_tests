@@ -151,8 +151,25 @@ def find_min(numbers: list) -> int:
 
 # Kevin Artunduaga
 def find_mean(numbers: list) -> float:
-    # TODO: write function to find the mean of a list of numbers
-    pass
+    """ Function to find the mean of a list of numbers
+
+    Parameters
+    ----------
+    numbers : list
+        list of numbers
+
+    Returns
+    -------
+    float
+        mean of the list of numbers
+
+    """
+    # Por si la lista esta vacia y evitar dividir por 0
+    if len(numbers) == 0:
+        return 0.0
+
+    mean = sum(numbers) / len(numbers)
+    return mean
 
 
 # Camila Cardona
