@@ -103,8 +103,20 @@ def square(a: int) -> int:
 
 # Sebastian Diaz
 def is_even(x: int) -> bool:
-    # TODO: write function to check if a number is even
-    pass
+    """
+    Function to check if a number is even
+
+    Parameters
+    ----------
+    x : int
+        The number to check
+
+    Returns
+    -------
+    bool
+        True if the number is even, False otherwise
+    """
+    return x % 2 == 0
 
 
 # Andres enriquez
@@ -142,11 +154,24 @@ def find_max(numbers: list) -> int:
     return max_number
 
 
-
 # Juan Felipe Zambrano
 def find_min(numbers: list) -> int:
-    # TODO: write function to find the minimum number in a list
-    pass
+    """
+    Test the find_min function with various scenarios.
+
+    This test function is designed to verify the correctness of the find_min function.
+    It includes different test cases to ensure the find_min function accurately
+    determines the minimum value from various lists.
+
+    Test cases:
+    - Test a list with positive numbers.
+    - Test a list with negative numbers.
+    - Test a list with a mix of positive and negative numbers.
+    """
+    
+
+    return min(numbers)
+
 
 
 # Kevin Artunduaga
