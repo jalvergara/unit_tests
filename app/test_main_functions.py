@@ -6,7 +6,8 @@ import pytest
 from unittest import mock
 
 
-from .main import add, divide, validate_no_null_values, db_query, subtract, reverse_string, list_sum, find_median, is_palindrome, factorial, find_mode, find_max, is_prime, list_product, is_even
+from .main import add, divide, validate_no_null_values, db_query, subtract, reverse_string, list_sum, find_median, is_palindrome, factorial, find_mode, find_max, is_prime, list_product,find_min, is_even
+
 
 
 def test_add():
@@ -95,8 +96,11 @@ def test_find_max():
 
 # Juan Felipe Zambrano
 def test_find_min():
-    # TODO: write the tests cases for the find_min function
-    pass
+    assert find_min([3, 7, 2, 9, 5]) == 2
+    assert find_min([-10, -5, -8, -3, -12]) == -12
+    assert find_min([-20, 10, 5, -3, 0]) == -20
+    # write the tests cases for the find_min function
+test_find_min()
 
 
 # Kevin Artunduaga
