@@ -5,7 +5,7 @@ import pytest
 
 from unittest import mock
 
-from .main import add, divide, validate_no_null_values, db_query, subtract
+from .main import add, divide, validate_no_null_values, db_query, subtract, is_even
 
 
 def test_add():
@@ -59,9 +59,11 @@ def test_square():
 
 # Sebastian Diaz
 def test_is_even():
-    # TODO: write the tests cases for the is_even function
-    pass
-
+    assert is_even(2) == True
+    assert is_even(3) == False
+    assert is_even(0) == True
+    assert is_even(-2) == True
+    assert is_even(-3) == False
 
 # Andres enriquez
 def test_find_max():
