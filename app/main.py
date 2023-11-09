@@ -103,8 +103,20 @@ def square(a: int) -> int:
 
 # Sebastian Diaz
 def is_even(x: int) -> bool:
-    # TODO: write function to check if a number is even
-    pass
+    """
+    Function to check if a number is even
+
+    Parameters
+    ----------
+    x : int
+        The number to check
+
+    Returns
+    -------
+    bool
+        True if the number is even, False otherwise
+    """
+    return x % 2 == 0
 
 
 # Andres enriquez
