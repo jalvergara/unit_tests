@@ -5,9 +5,7 @@ import pytest
 
 from unittest import mock
 
-
-from .main import add, divide, validate_no_null_values, db_query, subtract, reverse_string, list_sum, find_median, is_palindrome, factorial, find_mode, find_max, is_prime, list_product,find_min, is_even
-
+from .main import add, divide, validate_no_null_values, db_query, subtract, reverse_string, list_sum, find_median, is_palindrome, factorial, find_mode, find_max, is_prime, list_product,find_min, is_even, find_mean
 
 
 def test_add():
@@ -105,8 +103,21 @@ test_find_min()
 
 # Kevin Artunduaga
 def test_find_mean():
-    # TODO: write the tests cases for the find_mean function
-    pass
+    """Test case for the find_mean function."""
+    # Case 1 
+    numbers = [1, 2, 3, 4, 5]
+    result = find_mean(numbers)
+    assert result == 3.0
+
+    # Case 2
+    numbers = [-1, 0, 1]
+    result = find_mean(numbers)
+    assert result == 0.0
+
+    # Case 3
+    numbers = [-5, -3, -2, -1, 0]
+    result = find_mean(numbers)
+    assert result == -2.2
 
 
 # Camila Cardona
