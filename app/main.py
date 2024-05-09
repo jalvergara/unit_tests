@@ -1,6 +1,5 @@
 """ main functions to explain unit testing"""
 
-import numpy as np
 import pandas as pd
 
 
@@ -78,299 +77,69 @@ def db_query() -> str:
 
 # Alejandro Vergara
 def subtract(a: int, b: int) -> int:
-    """_summary_
+    # TODO: write function to substract two numbers
+    pass
 
-    Parameters
-    ----------
-    a : int
-        parameter1
-    b : int
-        parameter2
-
-    Returns
-    -------
-    int
-        a-b
-    """
-    return a - b
-
-
-# Samuel Patino
 def square(a: int) -> int:
     # TODO: write function to square a number
     pass
 
 
-# Sebastian Diaz
 def is_even(x: int) -> bool:
-    """
-    Function to check if a number is even
-
-    Parameters
-    ----------
-    x : int
-        The number to check
-
-    Returns
-    -------
-    bool
-        True if the number is even, False otherwise
-    """
-    return x % 2 == 0
+    # TODO: write function to check if a number is even
+    pass
 
 
-# Andres enriquez
 def find_max(numbers: list) -> int:
-    """
-    Encuentra el número máximo en una lista de números.
-
-    Args:
-        numbers (list): Una lista de números.
-
-    Returns:
-        int: El número máximo encontrado en la lista.
-
-    Raises:
-        ValueError: Si la lista está vacía.
-
-    Examples:
-        >>> find_max([3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5])
-        9
-
-        >>> find_max([])
-        Traceback (most recent call last):
-            ...
-        ValueError: La lista está vacía. No se puede encontrar el número máximo.
-    """
-    if not numbers:
-        raise ValueError("La lista está vacía. No se puede encontrar el número máximo.")
-
-    max_number = numbers[0]  # Suponemos que el primer número es el máximo inicialmente.
-
-    for number in numbers:
-        if number > max_number:
-            max_number = number
-
-    return max_number
+    # TODO: write function to find the maximum number in a list
+    pass
 
 
-# Juan Felipe Zambrano
 def find_min(numbers: list) -> int:
-    """
-    Test the find_min function with various scenarios.
-
-    This test function is designed to verify the correctness of the find_min function.
-    It includes different test cases to ensure the find_min function accurately
-    determines the minimum value from various lists.
-
-    Test cases:
-    - Test a list with positive numbers.
-    - Test a list with negative numbers.
-    - Test a list with a mix of positive and negative numbers.
-    """
-    
-
-    return min(numbers)
+    # TODO: write function to find the minimum number in a list
+    pass
 
 
-
-# Kevin Artunduaga
 def find_mean(numbers: list) -> float:
-    """ Function to find the mean of a list of numbers
-
-    Parameters
-    ----------
-    numbers : list
-        list of numbers
-
-    Returns
-    -------
-    float
-        mean of the list of numbers
-
-    """
-    # Por si la lista esta vacia y evitar dividir por 0
-    if len(numbers) == 0:
-        return 0.0
-
-    mean = sum(numbers) / len(numbers)
-    return mean
+    # TODO: write function to find the mean of a list of numbers
+    pass
 
 
-# Camila Cardona
 def find_median(numbers: list) -> float:
-    """Function to find the median of a list of numbers
-    
-    Parameters
-    ----------
-    numbers : list
-        list of numbers
-        
-    Returns
-    -------
-    float
-        median of the list of numbers
-    
-    """
-
-    numbers_array = np.array(numbers)
-
-    median = np.median(numbers_array)
-
-    return median
+    # TODO: write function to find the median of a list of numbers
+    pass
 
 
-# Juan Camilo Vargas
 def find_mode(numbers: list) -> int:
-    """
-    Function to find the mode(s) in a list of integers.
-
-    Parameters
-    ----------
-    data : list[int]
-        List of integers to find the mode(s) from.
-
-    Returns
-    -------
-    int
-        If multiple values have the same highest frequency, it returns the smallest one.
-        If the list is empty, it returns None.
-    """
-
-    if not numbers:
-        return None
-
-    num_frequency = {}
-    for num in numbers:
-        num_frequency[num] = num_frequency.get(num, 0) + 1
-
-    max_frequency = max(num_frequency.values())
-    modes = [num for num, freq in num_frequency.items() if freq == max_frequency]
-    return min(modes)
+    # TODO: write function to find the mode of a list of numbers
+    pass
 
 
-# Samuel Pinzon
 def factorial(n: int) -> int:
-    """
-    Function to calculate the factorial of a number
+    # TODO: write function to find the factorial of a number
+    pass
 
-    Parameters
-    ----------
-    n : int
-        number to calculate the factorial
-    
-    Returns
-    -------
-    int
-        factorial of n
 
-    Raises
-    ------
-    ValueError
-        If n is negative
-    """
-    if n < 0:
-        raise ValueError("n must be a non-negative integer")
-    
-    result = 1
-    for i in range(1, n + 1):
-        result *= i
-    return result
-
-# Atenea Rojas
 def is_prime(n: int) -> bool:
-    """
-    This function checks whether or not a given integer is prime.
-
-    Parameter
-    ----------
-    n : int
-       Integer number to check primality for.
-
-    Returns
-    -------
-    bool
-        True if the input parameter is prime, False otherwise.
-    """
-    if n <= 1:
-        return False
-
-    for i in range(2, int(n**0.5) + 1):
-        if n % i == 0:
-            return False
-
-    return True
+    # TODO: write function to check if a number is prime
+    pass
 
 
-# Gustavo Chipatinza
 def is_palindrome(word: str) -> bool:
-    """
-    Determine if a given word or phrase is a palindrome.
-
-    Parameters:
-    ----------
-    word : str
-        The word or phrase to be checked for palindromicity.
-
-    Returns:
-    -------
-    bool
-        True if the input is a palindrome, False otherwise.
-    """
-    cleaned_word = word.replace(" ", "").lower()
-    return cleaned_word == cleaned_word[::-1]
-    
+    # TODO: write function to check if a word is a palindrome
+    pass
 
 
-# Santiago Murgueitio
 def reverse_string(string: str) -> str:
-    """
-    Reverse a given string.
-
-    Args:
-        string (str): The input string to be reversed.
-
-    Returns:
-        str: The reversed string.
-
-    Example:
-        input -> reverse_string("Hello, World!")
-        output -> '!dlroW ,olleH'
-    """
-    return string[::-1]
+    # TODO: write function to reverse a string
+    pass
 
 
-# Maria Angelica Portocarrero
 def list_sum(numbers: list) -> int:
-    """ This method calculates the sum of a list of numbers.
+    # TODO: write function to sum a list of numbers
+    pass
 
-    Arguments:
-        numbers (list): A list of numbers.
 
-    Returns:
-        int: The sum of the numbers in the list.
-    """
-    return sum(numbers)
-
-# Angie Manzano
 def list_product(numbers: list) -> int:
-    """Function to multiply a list of numbers
-
-    Parameters
-    ----------
-    numbers : list
-        list with numbers to multiply
-
-    Returns
-    -------
-    int
-        [a * b * c * d * ... * n]
-    """
-    product = 1
-    listNumbers = []
-    for i in numbers:
-         if i != None :
-            listNumbers.append(i)
-    for i in listNumbers:
-         product = product * i
-    return product
+    # TODO: write function to multiply a list of numbers
+    pass
