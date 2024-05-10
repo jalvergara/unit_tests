@@ -266,10 +266,10 @@ def is_palindrome(word: str) -> bool:
     Returns
     -------
     string
-        check if the word is 'palindrome' (the same in order and reversed)
+        check if the word is 'palindrome'
     """
 
-    if(word == word[::-1]):
+    if word == word[::-1]:
         return True
     else:
         return False
@@ -302,15 +302,13 @@ def list_sum(numbers: list) -> int:
     Returns
     -------
     int
-        Iterate from 2 to n // 2
-        If n is divisible by any number between
-        2 and n / 2, it is not prime
+        'sum' list of number provide
     """
     return sum(numbers)
 
 
 def list_product(numbers: list) -> int:
-    """Function to sum one list of numbers
+    """Function to multiply one list of numbers
 
     Parameters
     ----------
@@ -320,7 +318,7 @@ def list_product(numbers: list) -> int:
     Returns
     -------
     int
-        Initialize the value of the product to 1. 
+        Initialize the value of the product to 1.
         Traverse to the end of the list
         multiplying each number by the product.
     """

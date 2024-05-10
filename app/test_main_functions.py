@@ -122,8 +122,8 @@ def test_is_prime():
 
 def test_is_palindrome():
     assert is_palindrome("allivessevilla") is True
-    assert is_palindrome("reconocer") is True
-    assert is_palindrome("almacen") is False
+    assert is_palindrome("somosonosomos") is True
+    assert is_palindrome("trestigrescomentrigo") is False
 
 
 def test_reverse_string():
