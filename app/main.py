@@ -3,6 +3,7 @@
 import pandas as pd
 
 
+
 def add(a: int, b: int) -> int:
     """Function to add two numbers
 
@@ -77,41 +78,150 @@ def db_query() -> str:
 
 # Alejandro Vergara
 def subtract(a: int, b: int) -> int:
-    # TODO: write function to substract two numbers
-    pass
+    """_summary_
+
+    Parameters
+    ----------
+    a : int
+        first digit
+    b : int
+        second digit
+
+    Returns
+    -------
+    int
+        a - b
+    """
+    return a - b
 
 def square(a: int) -> int:
-    # TODO: write function to square a number
-    pass
+    """
+    Squares a number.
+
+    Parameters
+    ----------
+    a : int
+        The number to be squared.
+
+    Returns
+    -------
+    int
+        The square of the input number.
+    """
+    return a * a
+
 
 
 def is_even(x: int) -> bool:
-    # TODO: write function to check if a number is even
-    pass
+    """
+    Checks if a number is even.
+
+    Parameters
+    ----------
+    x : int
+        The number to be checked.
+
+    Returns
+    -------
+    bool
+        True if the number is even, False otherwise.
+    """
+    return x % 2 == 0
+
 
 
 def find_max(numbers: list) -> int:
-    # TODO: write function to find the maximum number in a list
-    pass
+    """
+    Finds the maximum number in a list.
+
+    Parameters
+    ----------
+    numbers : list
+        The list of numbers.
+
+    Returns
+    -------
+    int
+        The maximum number in the list.
+    """
+    if not numbers:  
+        return None
+    max_num = numbers[0]  
+    for num in numbers:   
+        if num > max_num:  
+            max_num = num  
+    return max_num
+
 
 
 def find_min(numbers: list) -> int:
-    # TODO: write function to find the minimum number in a list
-    pass
+    """
+    Finds the minimum number in a list.
+
+    Parameters
+    ----------
+    numbers : list
+        The list of numbers.
+
+    Returns
+    -------
+    int
+        The minimum number in the list.
+    """
+    if not numbers:  
+        return None
+    min_num = numbers[0]  
+    for num in numbers:   
+        if num < min_num:  
+            min_num = num  
+    return min_num
+
 
 
 def find_mean(numbers: list) -> float:
-    # TODO: write function to find the mean of a list of numbers
-    pass
+    """
+    Finds the mean of a list of numbers.
+
+    Parameters
+    ----------
+    numbers : list
+        The list of numbers.
+
+    Returns
+    -------
+    float
+        The mean of the list.
+    """
+    if not numbers:  # Si la lista está vacía, devuelve None
+        return None
+    return sum(numbers) / len(numbers)
 
 
 def find_median(numbers: list) -> float:
-    # TODO: write function to find the median of a list of numbers
-    pass
+    """
+    Finds the median of a list of numbers.
+
+    Parameters
+    ----------
+    numbers : list
+        The list of numbers.
+
+    Returns
+    -------
+    float
+        The median of the list.
+    """
+    if not numbers:  # Si la lista está vacía, devuelve None
+        return None
+    sorted_nums = sorted(numbers)
+    n = len(sorted_nums)
+    if n % 2 == 0:
+        return (sorted_nums[n//2 - 1] + sorted_nums[n//2]) / 2
+    else:
+        return sorted_nums[n//2]
 
 
 def find_mode(numbers: list) -> int:
-    # TODO: write function to find the mode of a list of numbers
     pass
 
 
