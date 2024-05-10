@@ -5,7 +5,7 @@ import pytest
 
 from unittest import mock
 
-from .main import add, divide, validate_no_null_values, db_query, subtract
+from .main import add, divide, validate_no_null_values, db_query, subtract, square, is_even, find_max
 
 
 def test_add():
@@ -45,23 +45,27 @@ def test_db_query():
 
 # Alejandro Vergara
 def test_subtract():
-    pass
+    """Test cases for the subtract function."""
+    assert subtract(5, 2) == 3
+    assert subtract(-1, 1) == -2
+    assert subtract(0, 0) == 0 
 
 
 def test_square():
-    # TODO: write the tests cases for the square function
-    pass
-
+    """Test cases for the square function."""
+    assert square(0) == 0
+    assert square(25) == 25
 
 
 def test_is_even():
-    # TODO: write the tests cases for the is_even function
-    pass
-
+    """Test cases for the is even function."""
+    assert is_even(4) == True
+    assert is_even(7) == False
 
 def test_find_max():
-    # TODO: write the tests cases for the find_max function
-    pass
+    """Test cases for the find max function."""
+    assert find_max([1, 2, 3, 4, 5]) == 5
+    assert find_max([-5, -4, -3, -2, -1]) == -1
 
 
 def test_find_min():
