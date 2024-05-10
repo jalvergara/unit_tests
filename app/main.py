@@ -75,71 +75,154 @@ def db_query() -> str:
     return "DATA: [1, 2, 3]"
 
 
-# Alejandro Vergara
+# Emmanuel's functions
 def subtract(a: int, b: int) -> int:
-    # TODO: write function to substract two numbers
-    pass
+    return a - b
 
 def square(a: int) -> int:
-    # TODO: write function to square a number
-    pass
+    a = a * a
+    return a
 
 
 def is_even(x: int) -> bool:
-    # TODO: write function to check if a number is even
-    pass
+    return x % 2 == 0
+
 
 
 def find_max(numbers: list) -> int:
-    # TODO: write function to find the maximum number in a list
-    pass
+    return max(numbers)
 
 
 def find_min(numbers: list) -> int:
-    # TODO: write function to find the minimum number in a list
-    pass
+    return min(numbers)
 
 
 def find_mean(numbers: list) -> float:
-    # TODO: write function to find the mean of a list of numbers
-    pass
+    return sum(numbers) / len(numbers)
 
 
 def find_median(numbers: list) -> float:
-    # TODO: write function to find the median of a list of numbers
-    pass
+    """_summary_
+    Parameters 
+    ----------
+    numbers : list
+        list of numbers
+        Returns
+        -------
+        float
+            median of the list
+            """
+    numbers.sort()
+    n = len(numbers)
+    if n % 2 == 0:
+        return (numbers[n // 2 - 1] + numbers[n // 2]) / 2
+    else:
+        return numbers[n // 2]
 
 
 def find_mode(numbers: list) -> int:
-    # TODO: write function to find the mode of a list of numbers
-    pass
+    """_summary_
+    Parameters
+    ----------
+    numbers : list
+        list of numbers
+        Returns
+        -------
+        int
+            mode of the list
+            """
+    return max(set(numbers), key=numbers.count)
 
 
 def factorial(n: int) -> int:
-    # TODO: write function to find the factorial of a number
-    pass
+    """_summary_
+    Parameters
+    ----------
+    n : int
+        number to find factorial
+        Returns
+        -------
+        int
+            factorial of n
+            """
+    if n == 0:
+        return 1
+    return n * factorial(n - 1)
 
 
 def is_prime(n: int) -> bool:
-    # TODO: write function to check if a number is prime
-    pass
+    """_summary_
+    Parameters
+    ----------
+    n : int
+        number to check if prime
+        Returns
+        -------
+        bool
+            True if prime, False otherwise
+            """
+    if n < 2:
+        return False
+    for i in range(2, n):
+        if n % i == 0:
+            return False
+    return True
 
 
 def is_palindrome(word: str) -> bool:
-    # TODO: write function to check if a word is a palindrome
-    pass
+    """_summary_
+    Parameters
+    ----------
+    word : str
+        word to check if palindrome
+        Returns
+        -------
+        bool
+            True if palindrome, False otherwise
+            """
+    return word == word[::-1]
 
 
 def reverse_string(string: str) -> str:
-    # TODO: write function to reverse a string
-    pass
+    """_summary_
+    Parameters
+    ----------
+    string : str
+        string to reverse
+        Returns
+        -------
+        str
+            reversed string
+            """
+    return string[::-1]
 
 
 def list_sum(numbers: list) -> int:
-    # TODO: write function to sum a list of numbers
-    pass
+    """_summary_
+    Parameters
+    ----------
+    numbers : list
+        list of numbers
+        Returns
+        -------
+        int
+            sum of the list
+            """
+    return sum(numbers)
 
 
 def list_product(numbers: list) -> int:
-    # TODO: write function to multiply a list of numbers
-    pass
+    """_summary_
+    Parameters
+    ----------
+    numbers : list
+        list of numbers
+        Returns
+        -------
+        int
+            product of the list
+            """
+    result = 1
+    for number in numbers:
+        result *= number
+    return result
