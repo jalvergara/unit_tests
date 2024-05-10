@@ -1,32 +1,82 @@
 # Repository to explain about unit testing
 
-create virtual env
 
-python -m venv venv
+## Function:
 
-activate with :
+## Deploying:
 
-source data_validation_env/bin/activate
+### For Windows:
 
-pip install pytest, pandas, pytest-cov
+1. Create virtual env
 
-to run the tests:
-pytest tests/test_main_functions.py -s -v
+    ``` bash
+    python -m venv venv
+    ```
 
-to run the coverage:
+2. Activate with :
 
-pytest --cov
+    ``` bash
+    venv/Scripts/activate
+    pip install pytest, pandas, pytest-cov
+    ```
+
+3. To run the tests:
+
+    ``` bash
+    pytest app/test_main_functions.py -s -v
+    ```
+
+4. To run the coverage:
+
+    ``` bash
+    pytest --cov
+    ```
+
+### For others:
+
+1. Create virtual env
+
+    ``` bash
+    python -m venv venv
+    ```
+
+2. Activate with :
+
+    ``` bash
+    source data_validation_env/bin/activate
+    pip install pytest, pandas, pytest-cov
+    ```
+
+3. To run the tests:
+
+    ``` bash
+    pytest tests/test_main_functions.py -s -v
+    ```
+
+4. To run the coverage:
+
+    ``` bash
+    pytest --cov
+    ```
 
 ## Exercise:
 
 ### Create tests:
 
-1. create a branch with the name: feature/function_your_name , example: git checkout -b feature/function_alejandro
-2. create a docstring for all functions
-3. create the function described in the TODO
-4. In the test_main_functions.py create the test, please try to cover as much scenaries as posible in your test function
-5. test your functions using in the console:  pytest app/test_main_functions.py
-6. be sure your tests passed and take a screenshot and send it to my email with the link of your branch
-7. add your changes (git add, git commit)
-8. push your branch: git push origin feature/your_function_name_your_name
-9. go to the github repository and create a pull request
+1. Create a branch with the name: feature/function_your_name , example: git checkout -b feature/function_alejandro ✅.
+
+2. Create a docstring for all functions.
+
+3. Create the function described in the TODO.
+
+4. In the test_main_functions.py create the test, please try to cover as much scenaries as posible in your test function.
+
+5. Test your functions using in the console:  pytest app/test_main_functions.py.
+
+6. Be sure your tests passed and take a screenshot and send it to my email with the link of your branch.
+
+7. Add your changes (git add, git commit).
+
+8. Push your branch: git push origin feature/your_function_name_your_name.
+
+9. Go to the github repository and create a pull request.
