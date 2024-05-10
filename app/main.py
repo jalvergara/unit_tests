@@ -1,5 +1,6 @@
 """ main functions to explain unit testing"""
 
+import statistics
 import pandas as pd
 
 
@@ -77,52 +78,181 @@ def db_query() -> str:
 
 # Alejandro Vergara
 def subtract(a: int, b: int) -> int:
-    # TODO: write function to substract two numbers
-    pass
+    """Function to subtract two numbers
+
+    Parameters
+    ----------
+    a : int
+        first digit to subtract
+    b : int
+        second digit to subtract
+
+    Returns
+    -------
+    int
+        a '-' b
+    """
+    return a - b
+
 
 def square(a: int) -> int:
-    # TODO: write function to square a number
-    pass
+    """Function to squeare one number
+
+    Parameters
+    ----------
+    a : int
+        first digit to square
+
+    Returns
+    -------
+    int
+        a '**' 2
+    """
+    return a ** 2
 
 
 def is_even(x: int) -> bool:
-    # TODO: write function to check if a number is even
-    pass
+    """Function to even one number
+
+    Parameters
+    ----------
+    x : int
+        first digit provide
+
+    Returns
+    -------
+    int
+        x '%' 2
+    """
+    if (x % 2) == 0:
+        return True
+    else:
+        return False
 
 
 def find_max(numbers: list) -> int:
-    # TODO: write function to find the maximum number in a list
-    pass
+    """Function to find the max number of the list
+
+    Parameters
+    ----------
+    numbers : list
+        list of numbers provide
+
+    Returns
+    -------
+    int
+        'max' number of the list
+    """
+    return max(numbers)
 
 
 def find_min(numbers: list) -> int:
-    # TODO: write function to find the minimum number in a list
-    pass
+    """Function to find the min number of the list
+
+    Parameters
+    ----------
+    numbers : list
+        list of numbers provide
+
+    Returns
+    -------
+    int
+        'min' number of the list
+    """
+    return min(numbers)
 
 
 def find_mean(numbers: list) -> float:
-    # TODO: write function to find the mean of a list of numbers
-    pass
+    """Function to find the mean number of the list
+
+    Parameters
+    ----------
+    numbers : list
+        list of numbers provide
+
+    Returns
+    -------
+    int
+        'mean' number of the list provide
+    """
+    return statistics.mean(numbers)
 
 
 def find_median(numbers: list) -> float:
-    # TODO: write function to find the median of a list of numbers
-    pass
+    """Function to find the median number of the list
+
+    Parameters
+    ----------
+    numbers : list
+        list of numbers provide
+
+    Returns
+    -------
+    int
+        'median' number of the list provide
+    """
+    return statistics.median(numbers)
 
 
 def find_mode(numbers: list) -> int:
-    # TODO: write function to find the mode of a list of numbers
-    pass
+    """Function to find the mode number of the list
+
+    Parameters
+    ----------
+    numbers : list
+        list of numbers provide
+
+    Returns
+    -------
+    int
+        'mode' number of the list provide
+    """
+    return statistics.mode(numbers)
 
 
 def factorial(n: int) -> int:
-    # TODO: write function to find the factorial of a number
-    pass
+    """Function to factorial one number
+
+    Parameters
+    ----------
+    n : int
+        first digit provide
+
+    Returns
+    -------
+    int
+        n
+    """
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n-1)
 
 
 def is_prime(n: int) -> bool:
-    # TODO: write function to check if a number is prime
-    pass
+    """Function to even one number
+
+    Parameters
+    ----------
+    x : int
+        first digit provide
+
+    Returns
+    -------
+    int
+        Iterate from 2 to n // 2
+        If n is divisible by any number between
+        2 and n / 2, it is not prime
+    """
+
+    if n > 1:
+        for i in range(2, (n//2)+1):
+            if (n % i) == 0:
+                return False
+            else:
+                return True
+    else:
+        raise ValueError(n, "is not a valid number")
 
 
 def is_palindrome(word: str) -> bool:

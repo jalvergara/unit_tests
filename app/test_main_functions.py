@@ -5,7 +5,7 @@ import pytest
 
 from unittest import mock
 
-from .main import add, divide, validate_no_null_values, db_query, subtract
+from .main import add, divide, validate_no_null_values, db_query, subtract, square, is_even, find_max, find_min, find_mean, find_median, find_mode, factorial, is_prime
 
 
 def test_add():
@@ -43,55 +43,81 @@ def test_db_query():
         assert db_query() == 'DATA: [1, 2, 3]'
 
 
-# Alejandro Vergara
+# Vanessa Suarez
 def test_subtract():
-    pass
+    """Test cases for the subtract function."""
+    assert subtract(5, 3) == 2
+    assert subtract(8, 4) == 4
+    assert subtract(0, 0) == 0
 
 
 def test_square():
-    # TODO: write the tests cases for the square function
-    pass
+    """Test cases for the square function."""
+    assert square(2) == 4
+    assert square(1) == 1
+    assert square(0) == 0
 
 
 
 def test_is_even():
-    # TODO: write the tests cases for the is_even function
-    pass
+    """Test cases for the is even function."""
+    assert is_even(7) is False
+    assert is_even(4) is True
+    assert is_even(10) is True
 
 
 def test_find_max():
-    # TODO: write the tests cases for the find_max function
-    pass
+    """Test cases for the find max function."""
+    assert find_max([5, 6, 8]) == 8
+    assert find_max([10, 15, 12]) == 15
+    assert find_max([80, 18, 64]) == 80
 
 
 def test_find_min():
-    # TODO: write the tests cases for the find_min function
-    pass
+    """Test cases for the find min function."""
+    assert find_min([5, 6, 8]) == 5
+    assert find_min([10, 15, 12]) == 10
+    assert find_min([80, 18, 64]) == 18
 
 
 def test_find_mean():
-    # TODO: write the tests cases for the find_mean function
-    pass
+    """Test cases for the find mean function."""
+    assert find_mean([9, 12, 15]) == 12
+    assert find_mean([2, 4, 6, 8]) == 5
+    assert find_mean([5, 10, 15, 20, 25]) == 15
 
 
 def test_find_median():
-    # TODO: write the tests cases for the find_median function
-    pass
+    """Test cases for the find median function."""
+    assert find_median([9, 12, 15]) == 12
+    assert find_median([2, 4, 8]) == 4
+    assert find_median([5, 18, 32, 22, 25]) == 22
 
 
 def test_find_mode():
-    # TODO: write the tests cases for the find_mode function
-    pass
+    """Test cases for the find mode function."""
+    assert find_mode([9, 12, 15, 9, 11, 17]) == 9
+    assert find_mode([2, 4, 8, 6, 8]) == 8
+    assert find_mode([5, 18, 32, 22, 18]) == 18
 
 
 def test_factorial():
-    # TODO: write the tests cases for the factorial function
-    pass
+    """Test cases for the factorial function."""
+    assert factorial(5) == 120
+    assert factorial(4) == 24
+    assert factorial(0) == 1
 
 
 def test_is_prime():
-    # TODO: write the tests cases for the is_prime function
-    pass
+    """Test cases for the factorial function."""
+
+    with pytest.raises(
+        ValueError
+    ):
+        is_prime(0)
+
+    assert is_prime(5) is True
+    assert is_prime(4) is False
 
 
 def test_is_palindrome():
