@@ -75,71 +75,319 @@ def db_query() -> str:
     return "DATA: [1, 2, 3]"
 
 
-# Alejandro Vergara
+# Mariana Mera
 def subtract(a: int, b: int) -> int:
-    # TODO: write function to substract two numbers
-    pass
+    """Function to substract two numbers
+
+    Parameters
+    ----------
+    a : int
+        first digit to substract
+    b : int
+        second digit to substract
+
+    Returns
+    -------
+    int
+        a '-' b
+    """
+    return a - b
 
 def square(a: int) -> int:
-    # TODO: write function to square a number
-    pass
+    """Function to square a number
+
+    Parameters
+    ----------
+    a : int
+        
+    Returns
+    -------
+    int
+        a '*' a
+    """ 
+    return a * a
 
 
 def is_even(x: int) -> bool:
-    # TODO: write function to check if a number is even
-    pass
+    """
+    Function to check if a number is even.
+
+    Parameters
+    ----------
+    x : int
+        The number to check.
+
+    Returns
+    -------
+    bool
+        True if the number is even, False otherwise.
+    """
+    return x % 2 == 0
+
 
 
 def find_max(numbers: list) -> int:
-    # TODO: write function to find the maximum number in a list
-    pass
+    """
+    Function to find the maximum number in a list.
+
+    Parameters
+    ----------
+    numbers : list
+        A list of numbers.
+
+    Returns
+    -------
+    int
+        The maximum number found in the list.
+    """
+    if not numbers:
+        raise ValueError("The list is empty")
+    
+    return max(numbers)
 
 
 def find_min(numbers: list) -> int:
-    # TODO: write function to find the minimum number in a list
-    pass
+    """
+    Function to find the minimum number in a list.
+
+    Parameters
+    ----------
+    numbers : list
+        A list of numbers.
+
+    Returns
+    -------
+    int
+        The minimum number found in the list.
+    """
+    if not numbers:
+        raise ValueError("The list is empty")
+    
+    return min(numbers)
+
+
 
 
 def find_mean(numbers: list) -> float:
-    # TODO: write function to find the mean of a list of numbers
-    pass
+    """
+    Function to find the mean (average) of numbers in a list.
+
+    Parameters
+    ----------
+    numbers : list
+        A list of numbers.
+
+    Returns
+    -------
+    float
+        The mean of the numbers in the list.
+    """
+    if not numbers:
+        return 0  
+
+    total = sum(numbers)
+
+    mean = total / len(numbers)
+
+    return mean
+
 
 
 def find_median(numbers: list) -> float:
-    # TODO: write function to find the median of a list of numbers
-    pass
+    """
+    Function to find the median of numbers in a list.
+
+    Parameters
+    ----------
+    numbers : list
+        A list of numbers.
+
+    Returns
+    -------
+    float
+        The median of the numbers in the list.
+    """
+    if not numbers:
+        return 0
+    
+    numbers.sort()  
+    
+    n = len(numbers)
+    
+    if n % 2 == 0:
+        middle_left = numbers[n // 2 - 1]
+        middle_right = numbers[n // 2]
+        median = (middle_left + middle_right) / 2
+    else:
+        median = numbers[n // 2]
+    
+    return median
 
 
-def find_mode(numbers: list) -> int:
-    # TODO: write function to find the mode of a list of numbers
-    pass
+
+def find_mode(numbers: list) -> list:
+    """
+    Function to find the mode(s) in a list of numbers.
+
+    Parameters
+    ----------
+    numbers : list
+        A list of numbers.
+
+    Returns
+    -------
+    list
+        A list containing the mode(s) found in the input list.
+        If there are multiple modes, they are all returned.
+        If there is no mode (all numbers are unique), an empty list is returned.
+    """
+    if not numbers:
+        return []  
+    
+    counts = {}
+    
+    for number in numbers:
+        counts[number] = counts.get(number, 0) + 1
+    
+    max_count = max(counts.values())
+    
+    modes = [number for number, count in counts.items() if count == max_count]
+    
+    return modes
+
 
 
 def factorial(n: int) -> int:
-    # TODO: write function to find the factorial of a number
-    pass
+    """
+    Function to compute the factorial of a non-negative integer.
+
+    Parameters
+    ----------
+    n : int
+        The non-negative integer for which factorial is to be computed.
+
+    Returns
+    -------
+    int
+        The factorial of the given non-negative integer.
+    """
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n - 1)
+
 
 
 def is_prime(n: int) -> bool:
-    # TODO: write function to check if a number is prime
-    pass
+    """
+    Function to check if a number is prime.
+
+    Parameters
+    ----------
+    n : int
+        The number to check.
+
+    Returns
+    -------
+    bool
+        True if the number is prime, False otherwise.
+    """
+    if n <= 1:
+        return False  
+    
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False  
+    
+    return True 
+
 
 
 def is_palindrome(word: str) -> bool:
-    # TODO: write function to check if a word is a palindrome
-    pass
+    """
+    Function to check if a word is a palindrome.
+
+    Parameters
+    ----------
+    word : str
+        The word to check.
+
+    Returns
+    -------
+    bool
+        True if the word is a palindrome, False otherwise.
+    """
+    word = word.lower()
+    
+    return word == word[::-1]
 
 
 def reverse_string(string: str) -> str:
-    # TODO: write function to reverse a string
-    pass
+    """
+    Function to reverse a given string.
+
+    Parameters
+    ----------
+    string : str
+        The string to reverse.
+
+    Returns
+    -------
+    str
+        The reversed string.
+    """
+    reversed_string = ""
+    
+    for char in string[::-1]:
+        
+        reversed_string += char
+
+    return reversed_string
+
+
 
 
 def list_sum(numbers: list) -> int:
-    # TODO: write function to sum a list of numbers
-    pass
+    """
+    Function to compute the sum of numbers in a list.
+
+    Parameters
+    ----------
+    numbers : list
+        A list of numbers.
+
+    Returns
+    -------
+    int
+        The sum of the numbers in the list.
+    """
+    total = 0
+    
+    for num in numbers:
+        total += num
+    
+    return total
+
 
 
 def list_product(numbers: list) -> int:
-    # TODO: write function to multiply a list of numbers
-    pass
+    """
+    Function to compute the product of numbers in a list.
+
+    Parameters
+    ----------
+    numbers : list
+        A list of numbers.
+
+    Returns
+    -------
+    int
+        The product of the numbers in the list.
+    """
+    product = 1
+    
+    for num in numbers:
+        product *= num
+    
+    return product
+
