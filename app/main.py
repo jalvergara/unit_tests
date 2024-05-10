@@ -76,7 +76,7 @@ def db_query() -> str:
 
 
 def subtract(a: int, b: int) -> int:
-    """_summary_
+    """ Function to subtract two numbers
 
     Args:
         a : int
@@ -271,7 +271,6 @@ def is_palindrome(word: str) -> bool:
 
 
 def reverse_string(string: str) -> str:
-    # TODO: write function to reverse a string
     """ Function to reverse a string 
     
     Args:
@@ -286,7 +285,6 @@ def reverse_string(string: str) -> str:
 
 
 def list_sum(numbers: list) -> int:
-    # TODO: write function to sum a list of numbers
     """ Function to sum a list of numbers 
     
     Args:
@@ -301,7 +299,6 @@ def list_sum(numbers: list) -> int:
 
 
 def list_product(numbers: list) -> int:
-    # TODO: write function to multiply a list of numbers
     """ Function to multiply a list of numbers 
     
     Args:
