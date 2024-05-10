@@ -5,7 +5,7 @@ import pytest
 
 from unittest import mock
 
-from .main import add, divide, validate_no_null_values, db_query, subtract, square, is_even, find_max
+from .main import add, divide, validate_no_null_values, db_query, subtract, square, is_even, find_max, find_min,find_mean,find_median,find_mode,factorial,is_prime,reverse_string,list_sum,list_product
 
 
 def test_add():
@@ -69,34 +69,38 @@ def test_find_max():
 
 
 def test_find_min():
-    # TODO: write the tests cases for the find_min function
-    pass
+    """Test cases for the find min function."""
+    assert find_min([1, 2, 3, 4, 5]) == 1
+    assert find_min([-5, -4, -3, -2, -1]) == -5
 
 
 def test_find_mean():
-    # TODO: write the tests cases for the find_mean function
-    pass
+    """Test cases for the find mean function."""
+    assert find_mean([1, 2, 3, 4, 5]) == 3.0
+    assert find_mean([-10, -5, 0, 5, 10]) == 0.0
 
 
 def test_find_median():
-    # TODO: write the tests cases for the find_median function
-    pass
+    """Test cases for the find median function."""  
+    assert find_median([1, 3, 2, 5, 4]) == 3.0
+    assert find_median([1, 3, 2, 5, 4, 6]) == 3.5
 
 
 def test_find_mode():
-    # TODO: write the tests cases for the find_mode function
-    pass
+    """Test cases for the find mode function.""" 
+    assert find_mode([1, 2, 2, 3, 4]) == 2
+    assert find_mode([1, 2, 2, 3, 3, 4, 4, 5]) in [2, 3, 4]
 
 
 def test_factorial():
-    # TODO: write the tests cases for the factorial function
-    pass
-
+    """Test cases for the factorial function."""     
+    assert factorial(0) == 1
+    assert factorial(5) == 120
 
 def test_is_prime():
-    # TODO: write the tests cases for the is_prime function
-    pass
-
+    """Test cases for the prime function."""    
+    assert is_prime(7) == True, "Test case 1 failed"
+    assert is_prime(4) == False, "Test case 2 failed"
 
 def test_is_palindrome():
     # TODO: write the tests cases for the is_palindrome function
@@ -104,15 +108,19 @@ def test_is_palindrome():
 
 
 def test_reverse_string():
-    # TODO: write the tests cases for the reverse_string function
-    pass
+    """Test cases for the reverse string function."""    
+    assert reverse_string("hello") == "olleh"
 
 
 def test_list_sum():
-    # TODO: write the tests cases for the list_sum function
-    pass
+    """Test cases for the list sum function."""    
+    assert list_sum([1, 2, 3, 4, 5]) == 15
+    assert list_sum([-5, -4, -3, -2, -1]) == -15
+    assert list_sum([-10, -5, 0, 5, 10]) == 0
 
 
 def test_list_product():
-    # TODO: write the tests cases for the list_product function
-    pass
+    """Test cases for the list product function."""     
+    assert list_product([1, 2, 3, 4, 5]) == 120
+    assert list_product([-10, -5, 0, 5, 10]) == 0
+    assert list_product([3, 3, 3, 3, 3]) == 243
