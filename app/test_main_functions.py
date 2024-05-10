@@ -5,7 +5,7 @@ import pytest
 
 from unittest import mock
 
-from .main import add, divide, validate_no_null_values, db_query, subtract, square, is_even, find_max, find_min, find_mean, find_median, find_mode, factorial, is_prime
+from .main import add, divide, validate_no_null_values, db_query, subtract, square, is_even, find_max, find_min, find_mean, find_median, find_mode, factorial, is_prime, is_palindrome, reverse_string, list_sum, list_product
 
 
 def test_add():
@@ -121,20 +121,24 @@ def test_is_prime():
 
 
 def test_is_palindrome():
-    # TODO: write the tests cases for the is_palindrome function
-    pass
+    assert is_palindrome("allivessevilla") is True
+    assert is_palindrome("reconocer") is True
+    assert is_palindrome("almacen") is False
 
 
 def test_reverse_string():
-    # TODO: write the tests cases for the reverse_string function
-    pass
+    assert reverse_string("calor") == "rolac"
+    assert reverse_string("palmera") == "aremlap"
+    assert reverse_string("madera") == "aredam"
 
 
 def test_list_sum():
-    # TODO: write the tests cases for the list_sum function
-    pass
+    assert list_sum([9, 11, 17]) == 37
+    assert list_sum([8, 6, 8]) == 22
+    assert list_sum([32, 22, 18]) == 72
 
 
 def test_list_product():
-    # TODO: write the tests cases for the list_product function
-    pass
+    assert list_product([9, 2, 7]) == 126
+    assert list_product([2, 6, 8]) == 96
+    assert list_product([5, 8, 2]) == 80

@@ -230,12 +230,12 @@ def factorial(n: int) -> int:
 
 
 def is_prime(n: int) -> bool:
-    """Function to even one number
+    """Function to check one prime number
 
     Parameters
     ----------
-    x : int
-        first digit provide
+    n : int
+        number provide to check
 
     Returns
     -------
@@ -256,20 +256,75 @@ def is_prime(n: int) -> bool:
 
 
 def is_palindrome(word: str) -> bool:
-    # TODO: write function to check if a word is a palindrome
-    pass
+    """Function to check if a word is palindrome
+
+    Parameters
+    ----------
+    word : str
+        first string provide
+
+    Returns
+    -------
+    string
+        check if the word is 'palindrome' (the same in order and reversed)
+    """
+
+    if(word == word[::-1]):
+        return True
+    else:
+        return False
 
 
 def reverse_string(string: str) -> str:
-    # TODO: write function to reverse a string
-    pass
+    """Function reverse a string
+
+    Parameters
+    ----------
+    word : str
+        first string provide
+
+    Returns
+    -------
+    string
+         'reversed' string provide
+        """
+    return string[::-1]
 
 
 def list_sum(numbers: list) -> int:
-    # TODO: write function to sum a list of numbers
-    pass
+    """Function to sum one list of numbers
+
+    Parameters
+    ----------
+    numbers : list
+        list of numbers provide
+
+    Returns
+    -------
+    int
+        Iterate from 2 to n // 2
+        If n is divisible by any number between
+        2 and n / 2, it is not prime
+    """
+    return sum(numbers)
 
 
 def list_product(numbers: list) -> int:
-    # TODO: write function to multiply a list of numbers
-    pass
+    """Function to sum one list of numbers
+
+    Parameters
+    ----------
+    numbers : list
+        list of numbers provide
+
+    Returns
+    -------
+    int
+        Initialize the value of the product to 1. 
+        Traverse to the end of the list
+        multiplying each number by the product.
+    """
+    result = 1
+    for x in numbers:
+        result = result * x
+    return result
