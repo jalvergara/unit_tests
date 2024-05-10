@@ -5,7 +5,7 @@ import pytest
 
 from unittest import mock
 
-from .main import add, divide, validate_no_null_values, db_query, subtract
+from .main import *
 
 
 def test_add():
@@ -43,72 +43,123 @@ def test_db_query():
         assert db_query() == 'DATA: [1, 2, 3]'
 
 
-# Alejandro Vergara
+# Samuel Escalante
+
 def test_subtract():
-    pass
+    """Test case for subtract function"""
+    assert subtract(3,3) == 0
+    assert subtract(40,10) == 30
+    assert subtract(10,40) == -30
+
+@pytest.mark.parametrize(
+    "input1, input2, expected",
+    [
+        (6, 3, 3),
+        (100, 10, 90),
+        (-1, -1, 0),
+    ],
+)
+def test_subtract_params(input1, input2, expected):
+    assert subtract(input1, input2) == expected
 
 
 def test_square():
-    # TODO: write the tests cases for the square function
-    pass
-
-
+    """Test case for square function"""
+    assert square(2) == 4
+    assert square(3) == 9
+    assert square(0) == 0
+    
 
 def test_is_even():
-    # TODO: write the tests cases for the is_even function
-    pass
+    """Test case for is_even function"""
+    assert is_even(2) == True
+    assert is_even(3) == False
+    assert is_even(0) == True
 
 
-def test_find_max():
-    # TODO: write the tests cases for the find_max function
-    pass
+@pytest.mark.parametrize(
+    "input, expected",
+    [
+        ([3,5,7,8], 8),
+        ([1,2,3], 3),
+        ([-1, -8,-10], -1),
+    ],
+)
+def test_find_max(input, expected):
+    """ Test case for find_max function"""
+    assert find_max(input) == expected
 
-
-def test_find_min():
-    # TODO: write the tests cases for the find_min function
-    pass
-
+@pytest.mark.parametrize(
+    "input, expected",
+    [
+        ([3,5,7,8], 3),
+        ([1,2,3], 1),
+        ([-1, -8,-10], -10),
+    ],
+)
+def test_find_min(input, expected):
+    """ Test case for find_min function"""
+    assert find_min(input) == expected
+    
 
 def test_find_mean():
-    # TODO: write the tests cases for the find_mean function
-    pass
+    """Test case for find_mean function"""
+    assert find_mean([1,2,3,4,5]) == 3
+    assert find_mean([1,2,3,4,5,6,7,8,9,10]) == 5.5
+    assert find_mean([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]) == 8
 
-
-def test_find_median():
-    # TODO: write the tests cases for the find_median function
-    pass
-
+@pytest.mark.parametrize(
+    "input, expected",
+    [
+        ([1,2,3,4,5], 3),
+        ([1,2,3,4,5,6,7,8,9,10], 5.5),
+        ([1,2,3,4,5,6,7,8,9,10,11,12,13,14], 7.5),
+    ],
+)
+def test_find_median(input, expected):
+    """Test case for find_median function"""
+    assert find_median(input) == expected
 
 def test_find_mode():
-    # TODO: write the tests cases for the find_mode function
-    pass
-
+    """Test case for find_mode function"""
+    assert find_mode([1,2,3,4,5,6,7,8,9,10,10,10,10,10]) == 10
+    assert find_mode([1,25,5,5,5,6,7,8,9,10,10,]) == 5
+    
 
 def test_factorial():
-    # TODO: write the tests cases for the factorial function
-    pass
+    """Test case for factorial function"""
+    assert factorial(5) == 120
+    assert factorial(3) == 6
+    assert factorial(0) == 1
 
 
 def test_is_prime():
-    # TODO: write the tests cases for the is_prime function
-    pass
-
+    """Test case for is_prime function"""
+    assert is_prime(7) == True
+    assert is_prime(10) == False
+    assert is_prime(1) == False
 
 def test_is_palindrome():
-    # TODO: write the tests cases for the is_palindrome function
-    pass
+    """Test case for is_palindrome function"""
+    assert is_palindrome("racecar") == True
+    assert is_palindrome("hello") == False
+    assert is_palindrome("madam") == True
 
 
 def test_reverse_string():
-    # TODO: write the tests cases for the reverse_string function
-    pass
+    """Test case for reverse_string function"""
+    assert reverse_string("hello") == "olleh"
 
 
 def test_list_sum():
-    # TODO: write the tests cases for the list_sum function
-    pass
+    """Test case for list_sum function"""
+    assert list_sum([1,2,3,4,5]) == 15
+    assert list_sum([1,2,3,4,5,6,7,8,9,10]) == 55
+    assert list_sum([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]) == 120
 
 
 def test_list_product():
-    # TODO: write the tests cases for the list_product function
-    pass
+    """Test case for list_product function"""
+    assert list_product([1,2,3,4,5]) == 120
+    assert list_product([1,2,3,4,5,6,7,8,9,10]) == 3628800
+    assert list_product([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]) == 1307674368000

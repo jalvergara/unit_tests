@@ -77,69 +77,187 @@ def db_query() -> str:
 
 # Alejandro Vergara
 def subtract(a: int, b: int) -> int:
-    # TODO: write function to substract two numbers
-    pass
+    """
+    Function to subtract two numbers
+
+    Parameters
+    ----------
+    a : int
+        first digit
+    
+    b : int
+        second digit
+    """
+    return a - b
 
 def square(a: int) -> int:
-    # TODO: write function to square a number
-    pass
+    """
+    Function to square a number
 
+    Parameters
+    ----------
+    a : int
+        number to square
+    """
+    return a ** 2
 
 def is_even(x: int) -> bool:
-    # TODO: write function to check if a number is even
-    pass
+    """
+    Function to check if a number is even
+
+    Parameters
+    ----------
+    x : int
+        number to check
+    """
+    return True if x % 2 == 0 else False
 
 
 def find_max(numbers: list) -> int:
-    # TODO: write function to find the maximum number in a list
-    pass
+    """
+    Function to find the maximum number in a list
+
+    Parameters
+    ----------
+    numbers : list
+        list of numbers
+    
+    """
+    return max(numbers)
 
 
 def find_min(numbers: list) -> int:
-    # TODO: write function to find the minimum number in a list
-    pass
+    """
+    Function to find the minimum number in a list
+
+    Parameters
+    ----------
+    numbers : list
+        list of numbers
+    
+    """
+    return min(numbers)
 
 
 def find_mean(numbers: list) -> float:
-    # TODO: write function to find the mean of a list of numbers
-    pass
+    """
+    Function to find the mean of a list of numbers
 
+    Parameters
+    ----------
+    numbers : list
+        list of numbers
+    
+    """
+    return sum(numbers) / len(numbers)
 
 def find_median(numbers: list) -> float:
-    # TODO: write function to find the median of a list of numbers
-    pass
+    """
+    Function to find the median of a list of numbers
+
+    Parameters
+    ----------
+    numbers : list
+        list of numbers
+    
+    """
+    return sorted(numbers)[len(numbers) // 2] if len(numbers) % 2 != 0 else (sorted(numbers)[len(numbers) // 2] + sorted(numbers)[len(numbers) // 2 - 1]) / 2
 
 
 def find_mode(numbers: list) -> int:
-    # TODO: write function to find the mode of a list of numbers
-    pass
+    """
+    Function to find the mode of a list of numbers
+
+    Parameters
+    ----------
+    numbers : list
+        list of numbers
+    
+    """
+    return max(set(numbers), key=numbers.count)
 
 
 def factorial(n: int) -> int:
-    # TODO: write function to find the factorial of a number
-    pass
+    """
+    Function to calculate the factorial of a number
+
+    Parameters
+    ----------
+    n : int
+        number to calculate the factorial
+    
+    """
+    return 1 if n == 0 else n * factorial(n - 1)
 
 
 def is_prime(n: int) -> bool:
-    # TODO: write function to check if a number is prime
-    pass
+    """
+    Function to check if a number is prime
+
+    Parameters
+    ----------
+    n : int
+        number to check
+    
+    """
+    return n > 1 and all(n % i != 0 for i in range(2, n))
 
 
 def is_palindrome(word: str) -> bool:
-    # TODO: write function to check if a word is a palindrome
-    pass
+    """
+    Function to check if a word is a palindrome
+
+    Parameters
+    ----------
+    word : str
+        word to check
+    
+    """
+    return word == word[::-1]
 
 
 def reverse_string(string: str) -> str:
-    # TODO: write function to reverse a string
-    pass
+    """
+    Function to reverse a string
+
+    Parameters
+    ----------
+    string : str
+        string to reverse
+    
+    """
+    return string[::-1]
 
 
 def list_sum(numbers: list) -> int:
-    # TODO: write function to sum a list of numbers
-    pass
+    """
+    Function to sum a list of numbers
+
+    Parameters
+    ----------
+    numbers : list
+        list of numbers
+    
+    """
+    return sum(numbers)
 
 
 def list_product(numbers: list) -> int:
-    # TODO: write function to multiply a list of numbers
-    pass
+    """
+    Function to multiply a list of numbers
+
+    Parameters
+    ----------
+    numbers : list
+        list of numbers
+    
+    """
+    product = 1
+    listNumbers = []
+    for i in numbers:
+         if i != None :
+            listNumbers.append(i)
+    for i in listNumbers:
+         product = product * i
+    return product
+    
