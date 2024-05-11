@@ -44,7 +44,7 @@ def test_db_query():
         assert db_query() == 'DATA: [1, 2, 3]'
 
 
-
+#María de los Ángeles Amú
 def test_subtract():
     """Test cases for the subtract function."""
     assert subtract(2, 3) == -1
@@ -54,12 +54,12 @@ def test_subtract():
 
 def test_square():
     """Test cases for the square function."""
-    assert square(2) == 4
-    assert square(5) == 25
     assert square(10) == 100
+    assert square(5) == 25
+    assert square(6) == 36
     assert square(-3) == 9
     assert square(-4) == 16
-    assert square(-7) == 49
+    assert square(-8) == 64
     assert square(0) == 0
 
 
@@ -102,11 +102,12 @@ def test_find_min():
 
 def test_find_mean():
     """Test cases for the find_mean function."""
-    assert find_mean([1, 2, 3, 4, 5]) == 3.0
-    assert find_mean([-1, -2, -3, -4, -5]) == -3.0
-    assert find_mean([-1, 2, -3, 4, -5]) == -0.6
+    assert find_mean([2, 4, 6, 8, 10]) == 6.0
+    assert find_mean([-2, -4, -6, -8, -10]) == -6.0
+    assert find_mean([-2, 3, -4, 5, 6]) == 1.6
     assert find_mean([6]) == 6.0
     assert find_mean([]) == None
+
 
 
 
@@ -139,9 +140,9 @@ def test_factorial():
 
 def test_is_prime():
     """Test cases for the is_prime function."""
-    assert is_prime(2) == True
-    assert is_prime(4) == False
+    assert is_prime(3) == True
     assert is_prime(6) == False
+    assert is_prime(8) == False
     assert is_prime(-2) == False
     assert is_prime(-3) == False
     assert is_prime(0) == False
@@ -177,20 +178,22 @@ def test_reverse_string():
 
 def test_list_sum():
     """Test cases for the list_sum function."""
-    assert list_sum([1, 2, 3, 4, 5]) == 15
-    assert list_sum([-1, -2, -3, -4, -5]) == -15
-    assert list_sum([-1, 2, -3, 4, -5]) == -3
+    assert list_sum([2, 4, 6, 8, 10]) == 30
+    assert list_sum([-2, -4, -6, -8, -10]) == -30
+    assert list_sum([-2, 3, -4, 5, 6]) == 8
     assert list_sum([7]) == 7
     assert list_sum([]) == 0
 
 
 
+
 def test_list_product():
     """Test cases for the list_product function."""
-    assert list_product([1, 2, 3, 4, 5]) == 120
-    assert list_product([-1, -2, -3, -4, -5]) == -120
-    assert list_product([-1, 2, -3, 4, 5]) == 120
+    assert list_product([2, 4, 6, 8, 10]) == 3840
+    assert list_product([-2, -4, -6, -8, -10]) == -3840
+    assert list_product([-2, 3, -4, 5, 6]) == 720
     assert list_product([7]) == 7
     assert list_product([]) == 1
+
 
 
