@@ -79,8 +79,9 @@ def db_query() -> str:
 
 
 
-def subtract(a: int, b: int) -> int:
-    """_summary_
+def subtract(a, b):
+    """
+    Subtract b from a.
 
     Parameters
     ----------
@@ -96,9 +97,10 @@ def subtract(a: int, b: int) -> int:
     """
     return a - b
 
-def square(a: int) -> int:
+
+def square(a):
     """
-    Squares a number.
+    Calculate the square of a number.
 
     Parameters
     ----------
@@ -113,162 +115,172 @@ def square(a: int) -> int:
     return a * a
 
 
-
-def is_even(x: int) -> bool:
+def is_even(a):
     """
-    Checks if a number is even.
+    Check if a number is even.
 
     Parameters
     ----------
-    x : int
-        The number to be checked.
+    a : int
+        The number to check.
 
     Returns
     -------
     bool
         True if the number is even, False otherwise.
     """
-    return x % 2 == 0
+    return a % 2 == 0
 
 
-
-def find_max(numbers: list) -> int:
+def find_max(lst):
     """
-    Finds the maximum number in a list.
+    Find the maximum value in a list.
 
     Parameters
     ----------
-    numbers : list
-        The list of numbers.
+    lst : list of int
+        The list of integers.
 
     Returns
     -------
-    int
-        The maximum number in the list.
+    int or None
+        The maximum value in the list, or None if the list is empty.
     """
-    if not numbers:  
+    if len(lst) == 0:
         return None
-    max_num = numbers[0]  
-    for num in numbers:   
-        if num > max_num:  
-            max_num = num  
-    return max_num
+    return max(lst)
 
 
-
-def find_min(numbers: list) -> int:
+def find_min(lst):
     """
-    Finds the minimum number in a list.
+    Find the minimum value in a list.
 
     Parameters
     ----------
-    numbers : list
-        The list of numbers.
+    lst : list of int
+        The list of integers.
 
     Returns
     -------
-    int
-        The minimum number in the list.
+    int or None
+        The minimum value in the list, or None if the list is empty.
     """
-    if not numbers:  
+    if len(lst) == 0:
         return None
-    min_num = numbers[0]  
-    for num in numbers:   
-        if num < min_num:  
-            min_num = num  
-    return min_num
+    return min(lst)
 
 
-
-def find_mean(numbers: list) -> float:
+def find_mean(lst):
     """
-    Finds the mean of a list of numbers.
+    Calculate the mean (average) of a list of numbers.
 
     Parameters
     ----------
-    numbers : list
-        The list of numbers.
+    lst : list of int
+        The list of integers.
 
     Returns
     -------
-    float
-        The mean of the list.
+    float or None
+        The mean of the numbers in the list, or None if the list is empty.
     """
-    if not numbers:  # Si la lista está vacía, devuelve None
+    if len(lst) == 0:
         return None
-    return sum(numbers) / len(numbers)
+    return sum(lst) / len(lst)
 
 
-def find_median(numbers: list) -> float:
+def find_median(lst):
     """
-    Finds the median of a list of numbers.
+    Calculate the median of a list of numbers.
 
     Parameters
     ----------
-    numbers : list
-        The list of numbers.
+    lst : list of int
+        The list of integers.
 
     Returns
     -------
-    float
-        The median of the list.
+    int or float or None
+        The median of the numbers in the list, or None if the list is empty.
     """
-    if not numbers:  # Si la lista está vacía, devuelve None
+    n = len(lst)
+    if n == 0:
         return None
-    sorted_nums = sorted(numbers)
-    n = len(sorted_nums)
+    sorted_lst = sorted(lst)
     if n % 2 == 0:
-        return (sorted_nums[n//2 - 1] + sorted_nums[n//2]) / 2
+        return (sorted_lst[n // 2 - 1] + sorted_lst[n // 2]) / 2
     else:
-        return sorted_nums[n//2]
+        return sorted_lst[n // 2]
 
 
-def find_mode(numbers: list) -> int:
+def find_mode(lst):
     """
-    Finds the mode of a list of numbers.
+    Find the mode(s) of a list of numbers.
 
     Parameters
     ----------
-    numbers : list
-        The list of numbers.
+    lst : list of int
+        The list of integers.
 
     Returns
     -------
-    int
-        The mode of the list.
+    int or list of int or None
+        The mode(s) of the numbers in the list, or None if the list is empty.
     """
-    if not numbers:  # Si la lista está vacía, devuelve None
+    if len(lst) == 0:
         return None
-    counter = Counter(numbers)
-    mode = counter.most_common(1)[0][0]
-    return mode
+    counter = {}
+    max_count = 0
+    modes = []
+    for num in lst:
+        if num not in counter:
+            counter[num] = 0
+        counter[num] += 1
+        if counter[num] > max_count:
+            max_count = counter[num]
+            modes = [num]
+        elif counter[num] == max_count:
+            modes.append(num)
+    return modes[0] if len(modes) == 1 else modes
 
 
-def factorial(n: int) -> int:
+def factorial(n):
     """
-    Finds the factorial of a number.
+    Calculate the factorial of a non-negative integer.
 
     Parameters
     ----------
     n : int
-        The number.
+        The non-negative integer.
 
     Returns
     -------
     int
-        The factorial of the number.
+        The factorial of the input integer.
+    
+    Raises
+    ------
+    ValueError
+        If the input is negative.
     """
-    return math_factorial(n)
+    if n < 0:
+        raise ValueError("Factorial is not defined for negative numbers.")
+    if n == 0:
+        return 1
+    result = 1
+    for i in range(1, n + 1):
+        result *= i
+    return result
 
 
-def is_prime(n: int) -> bool:
+def is_prime(n):
     """
-    Checks if a number is prime.
+    Check if a number is prime.
 
     Parameters
     ----------
     n : int
-        The number to be checked.
+        The number to check.
 
     Returns
     -------
@@ -277,84 +289,78 @@ def is_prime(n: int) -> bool:
     """
     if n <= 1:
         return False
-    elif n <= 3:
-        return True
-    elif n % 2 == 0 or n % 3 == 0:
-        return False
-    i = 5
-    while i * i <= n:
-        if n % i == 0 or n % (i + 2) == 0:
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
             return False
-        i += 6
     return True
 
 
-def is_palindrome(word: str) -> bool:
+def is_palindrome(s):
     """
-    Checks if a word is a palindrome.
+    Check if a string is a palindrome.
 
     Parameters
     ----------
-    word : str
-        The word to be checked.
+    s : str
+        The string to check.
 
     Returns
     -------
     bool
-        True if the word is a palindrome, False otherwise.
+        True if the string is a palindrome, False otherwise.
     """
-    return word == word[::-1]
+    return s == s[::-1]
 
 
-def reverse_string(string: str) -> str:
+def reverse_string(s):
     """
-    Reverses a string.
+    Reverse a string.
 
     Parameters
     ----------
-    string : str
-        The string to be reversed.
+    s : str
+        The string to reverse.
 
     Returns
     -------
     str
         The reversed string.
     """
-    return string[::-1]
+    return s[::-1]
 
 
-def list_sum(numbers: list) -> int:
+def list_sum(lst):
     """
-    Sums a list of numbers.
+    Calculate the sum of elements in a list.
 
     Parameters
     ----------
-    numbers : list
-        The list of numbers.
+    lst : list of int
+        The list of integers.
 
     Returns
     -------
     int
-        The sum of the list of numbers.
+        The sum of the numbers in the list.
     """
-    return sum(numbers)
+    return sum(lst)
 
 
-def list_product(numbers: list) -> int:
+def list_product(lst):
     """
-    Multiplies a list of numbers.
+    Calculate the product of elements in a list.
 
     Parameters
     ----------
-    numbers : list
-        The list of numbers.
+    lst : list of int
+        The list of integers.
 
     Returns
     -------
     int
-        The product of the list of numbers.
+        The product of the numbers in the list.
     """
     result = 1
-    for num in numbers:
+    for num in lst:
         result *= num
     return result

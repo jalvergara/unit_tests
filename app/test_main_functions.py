@@ -123,8 +123,8 @@ def test_find_median():
 def test_find_mode():
     """Test cases for the find_mode function."""
     assert find_mode([1, 2, 2, 3, 4]) == 2
-    assert find_mode([1, 2, 2, 3, 3, 4]) in [2, 3]  
-    assert find_mode([2, 4, 6, 8, 10]) in [2, 4, 6, 8, 10]
+    assert find_mode([1, 2, 2, 3, 3, 4]) == [2, 3]  
+    assert find_mode([2, 4, 6, 8, 10]) == [2, 4, 6, 8, 10]
     assert find_mode([5]) == 5
     assert find_mode([]) == None
 
