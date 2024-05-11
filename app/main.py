@@ -1,6 +1,8 @@
 """ main functions to explain unit testing"""
 
 import pandas as pd
+from collections import Counter
+from math import factorial as math_factorial
 
 
 
@@ -76,7 +78,7 @@ def db_query() -> str:
     return "DATA: [1, 2, 3]"
 
 
-# Alejandro Vergara
+
 def subtract(a: int, b: int) -> int:
     """_summary_
 
@@ -222,34 +224,137 @@ def find_median(numbers: list) -> float:
 
 
 def find_mode(numbers: list) -> int:
-    pass
+    """
+    Finds the mode of a list of numbers.
+
+    Parameters
+    ----------
+    numbers : list
+        The list of numbers.
+
+    Returns
+    -------
+    int
+        The mode of the list.
+    """
+    if not numbers:  # Si la lista está vacía, devuelve None
+        return None
+    counter = Counter(numbers)
+    mode = counter.most_common(1)[0][0]
+    return mode
 
 
 def factorial(n: int) -> int:
-    # TODO: write function to find the factorial of a number
-    pass
+    """
+    Finds the factorial of a number.
+
+    Parameters
+    ----------
+    n : int
+        The number.
+
+    Returns
+    -------
+    int
+        The factorial of the number.
+    """
+    return math_factorial(n)
 
 
 def is_prime(n: int) -> bool:
-    # TODO: write function to check if a number is prime
-    pass
+    """
+    Checks if a number is prime.
+
+    Parameters
+    ----------
+    n : int
+        The number to be checked.
+
+    Returns
+    -------
+    bool
+        True if the number is prime, False otherwise.
+    """
+    if n <= 1:
+        return False
+    elif n <= 3:
+        return True
+    elif n % 2 == 0 or n % 3 == 0:
+        return False
+    i = 5
+    while i * i <= n:
+        if n % i == 0 or n % (i + 2) == 0:
+            return False
+        i += 6
+    return True
 
 
 def is_palindrome(word: str) -> bool:
-    # TODO: write function to check if a word is a palindrome
-    pass
+    """
+    Checks if a word is a palindrome.
+
+    Parameters
+    ----------
+    word : str
+        The word to be checked.
+
+    Returns
+    -------
+    bool
+        True if the word is a palindrome, False otherwise.
+    """
+    return word == word[::-1]
 
 
 def reverse_string(string: str) -> str:
-    # TODO: write function to reverse a string
-    pass
+    """
+    Reverses a string.
+
+    Parameters
+    ----------
+    string : str
+        The string to be reversed.
+
+    Returns
+    -------
+    str
+        The reversed string.
+    """
+    return string[::-1]
 
 
 def list_sum(numbers: list) -> int:
-    # TODO: write function to sum a list of numbers
-    pass
+    """
+    Sums a list of numbers.
+
+    Parameters
+    ----------
+    numbers : list
+        The list of numbers.
+
+    Returns
+    -------
+    int
+        The sum of the list of numbers.
+    """
+    return sum(numbers)
 
 
 def list_product(numbers: list) -> int:
-    # TODO: write function to multiply a list of numbers
-    pass
+    """
+    Multiplies a list of numbers.
+
+    Parameters
+    ----------
+    numbers : list
+        The list of numbers.
+
+    Returns
+    -------
+    int
+        The product of the list of numbers.
+    """
+    result = 1
+    for num in numbers:
+        result *= num
+    return result
