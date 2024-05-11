@@ -360,7 +360,7 @@ def list_product(lst):
     int
         The product of the numbers in the list.
     """
-    result = 1
+    number = 1
     for num in lst:
-        result *= num
-    return result
+        number *= num
+    return number
