@@ -1,7 +1,6 @@
 """ main functions to explain unit testing"""
 
 import pandas as pd
-from collections import Counter
 
 
 def add(a: int, b: int) -> int:
@@ -76,230 +75,71 @@ def db_query() -> str:
     return "DATA: [1, 2, 3]"
 
 
+# Alejandro Vergara
 def subtract(a: int, b: int) -> int:
-    """
-    This function subtracts the second number (b) from the first number (a).
-    
-    Args:
-        a (int): The first number.
-        b (int): The second number to be subtracted.
-        
-    Returns:
-        int: The result of subtracting b from a.
-    """
-    return a - b
+    # TODO: write function to substract two numbers
+    pass
 
 def square(a: int) -> int:
-    """
-    This function squares a number.
-
-    Args:
-        a (int): The number to be squared.
-
-    Returns:
-        int: The square of the input number.
-    """
-    return a * a
+    # TODO: write function to square a number
+    pass
 
 
 def is_even(x: int) -> bool:
-    """
-    This function checks if a number is even.
-
-    Args:
-        x (int): The number to be checked.
-
-    Returns:
-        bool: True if the number is even, False otherwise.
-    """
-    return x % 2 == 0
+    # TODO: write function to check if a number is even
+    pass
 
 
 def find_max(numbers: list) -> int:
-    """
-    This function finds the maximum number in a list.
-
-    Args:
-        numbers (list): The list of numbers to search for the maximum.
-
-    Returns:
-        int: The maximum number found in the list.
-
-    Raises:
-        ValueError: If the input list is empty.
-    """
-    if not numbers:
-        raise ValueError("The list is empty")
-
-    max_number = max(numbers)
-    return max_number
+    # TODO: write function to find the maximum number in a list
+    pass
 
 
 def find_min(numbers: list) -> int:
-    """
-    This function finds the minimum number in a list.
-
-    Args:
-        numbers (list): The list of numbers to search for the minimum.
-
-    Returns:
-        int: The minimum number found in the list.
-
-    Raises:
-        ValueError: If the input list is empty.
-    """
-    if not numbers:
-        raise ValueError("The list is empty")
-
-    min_number = min(numbers)
-    return min_number
+    # TODO: write function to find the minimum number in a list
+    pass
 
 
 def find_mean(numbers: list) -> float:
-    """
-    Calculate the mean of a list of numbers.
-
-    Parameters:
-    numbers (list): A list of numbers.
-
-    Returns:
-    float: The mean of the numbers.
-    """
-    if not numbers:
-        return 0
-    return sum(numbers) / len(numbers)
+    # TODO: write function to find the mean of a list of numbers
+    pass
 
 
 def find_median(numbers: list) -> float:
-    """
-    Calculate the median of a list of numbers.
-
-    Parameters:
-    numbers (list): A list of numbers.
-
-    Returns:
-    float: The median of the numbers.
-    """
-    sorted_numbers = sorted(numbers)
-    n = len(sorted_numbers)
-    if n == 0:
-        return 0
-    if n % 2 == 0:
-        return (sorted_numbers[n//2 - 1] + sorted_numbers[n//2]) / 2
-    else:
-        return sorted_numbers[n//2]
+    # TODO: write function to find the median of a list of numbers
+    pass
 
 
 def find_mode(numbers: list) -> int:
-    """
-    Calculate the mode of a list of numbers.
-
-    Parameters:
-    numbers (list): A list of numbers.
-
-    Returns:
-    int: The mode of the numbers.
-    """
-    if not numbers:
-        return 0
-    counter = Counter(numbers)
-    max_count = max(counter.values())
-    mode = [number for number, count in counter.items() if count == max_count]
-    return mode[0] if len(mode) == 1 else mode
+    # TODO: write function to find the mode of a list of numbers
+    pass
 
 
 def factorial(n: int) -> int:
-    """
-    Calculate the factorial of a number.
-
-    Parameters:
-    n (int): An integer.
-
-    Returns:
-    int: The factorial of the number.
-    """
-    if n < 0:
-        raise ValueError("Factorial is not defined for negative numbers.")
-    result = 1
-    for i in range(1, n + 1):
-        result *= i
-    return result
+    # TODO: write function to find the factorial of a number
+    pass
 
 
 def is_prime(n: int) -> bool:
-    """
-    Check if a number is prime.
-
-    Parameters:
-    n (int): An integer.
-
-    Returns:
-    bool: True if the number is prime, False otherwise.
-    """
-    if n <= 1:
-        return False
-    if n <= 3:
-        return True
-    if n % 2 == 0 or n % 3 == 0:
-        return False
-    i = 5
-    while i * i <= n:
-        if n % i == 0 or n % (i + 2) == 0:
-            return False
-        i += 6
-    return True
+    # TODO: write function to check if a number is prime
+    pass
 
 
 def is_palindrome(word: str) -> bool:
-    """
-    Check if a word is a palindrome.
-
-    Parameters:
-    word (str): A string.
-
-    Returns:
-    bool: True if the word is a palindrome, False otherwise.
-    """
-    return word == word[::-1]
+    # TODO: write function to check if a word is a palindrome
+    pass
 
 
 def reverse_string(string: str) -> str:
-    """
-    Reverse a string.
-
-    Parameters:
-    string (str): A string.
-
-    Returns:
-    str: The reversed string.
-    """
-    return string[::-1]
+    # TODO: write function to reverse a string
+    pass
 
 
 def list_sum(numbers: list) -> int:
-    """
-    Sum a list of numbers.
-
-    Parameters:
-    numbers (list): A list of numbers.
-
-    Returns:
-    int: The sum of the numbers.
-    """
-    return sum(numbers)
+    # TODO: write function to sum a list of numbers
+    pass
 
 
 def list_product(numbers: list) -> int:
-    """
-    Multiply a list of numbers.
-
-    Parameters:
-    numbers (list): A list of numbers.
-
-    Returns:
-    int: The product of the numbers.
-    """
-    result = 1
-    for num in numbers:
-        result *= num
-    return result
+    # TODO: write function to multiply a list of numbers
+    pass
