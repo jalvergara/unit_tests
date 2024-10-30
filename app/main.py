@@ -77,12 +77,25 @@ def db_query() -> str:
 
 # Alejandro Vergara
 def subtract(a: int, b: int) -> int:
-    # TODO: write function to substract two numbers
-    pass
+    """Function to substract two numbers
+
+    Parameters
+    ----------
+    a : int
+        first digit to add
+    b : int
+        second digit to add
+
+    Returns
+    -------
+    int
+        a '-' b
+    """
+    return a - b
 
 def square(a: int) -> int:
-    # TODO: write function to square a number
-    pass
+    
+    return a * a
 
 
 def is_even(x: int) -> bool:

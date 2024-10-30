@@ -5,7 +5,7 @@ import pytest
 
 from unittest import mock
 
-from .main import add, divide, validate_no_null_values, db_query, subtract
+from .main import add, divide, validate_no_null_values, db_query, subtract, square
 
 
 def test_add():
@@ -45,12 +45,18 @@ def test_db_query():
 
 # Alejandro Vergara
 def test_subtract():
-    pass
+    """Test cases for the subtract function."""
+    assert subtract(3, 2) == 1
+    assert subtract(-1, -1) == 0
+    assert subtract(0, 0) == 0
 
 
 def test_square():
-    # TODO: write the tests cases for the square function
-    pass
+    """Test cases for the square function."""
+    assert square(1) == 1
+    assert square(2) == 4
+    assert square(-2) == 4
+    assert square(0) == 0
 
 
 
