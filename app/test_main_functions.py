@@ -5,8 +5,10 @@ import pytest
 
 from unittest import mock
 
-from .main import add, divide, validate_no_null_values, db_query, subtract, square, is_even, find_max ,find_min, find_mean, find_median, find_mode, factorial, is_prime, is_palindrome, reverse_string, list_sum, list_product
-
+from .main import (add, divide, validate_no_null_values, db_query, subtract,
+                  square, is_even, find_max, find_min, find_mean, find_median,
+                  find_mode, factorial, is_prime, is_palindrome, reverse_string,
+                  list_sum, list_product)
 
 def test_add():
     """Test cases for the add function."""
@@ -121,18 +123,19 @@ def test_find_median():
 
 
 def test_find_mode():
-    """Test cases for the find_mode function."""
     assert find_mode([1, 2, 2, 3]) == 2
-    assert find_mode([5, 5, 6, 6, 7]) == 5
-    assert find_mode([3]) == 3
+    assert find_mode([1, 1, 2, 2, 3]) == 1  
+    with pytest.raises(ValueError):
+        find_mode([])  
 
 
 
 def test_factorial():
-    """Test cases for the factorial function."""
-    assert factorial(0) == 1
-    assert factorial(5) == 120
-    assert factorial(3) == 6
+    assert factorial(0) == 1  
+    assert factorial(1) == 1  
+    assert factorial(5) == 120  
+    with pytest.raises(ValueError):
+        factorial(-1)  
 
 
 
@@ -151,7 +154,7 @@ def test_is_palindrome():
     assert is_palindrome("hello") is False
     assert is_palindrome("level") is True
     assert is_palindrome("a") is True
-
+    assert is_palindrome("") is True  
 
 
 def test_reverse_string():
