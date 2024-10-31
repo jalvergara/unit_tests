@@ -77,69 +77,108 @@ def db_query() -> str:
 
 # Alejandro Vergara
 def subtract(a: int, b: int) -> int:
-    # TODO: write function to substract two numbers
-    pass
+    
+    return a - b
 
 def square(a: int) -> int:
-    # TODO: write function to square a number
-    pass
+    return a**2    
 
 
 def is_even(x: int) -> bool:
-    # TODO: write function to check if a number is even
-    pass
+    if x % 2 == 0:
+        return True
+    return False
 
 
 def find_max(numbers: list) -> int:
-    # TODO: write function to find the maximum number in a list
-    pass
+    numbers.sort()
+    return numbers.pop()
 
 
 def find_min(numbers: list) -> int:
-    # TODO: write function to find the minimum number in a list
-    pass
+    numbers.sort(reverse=True)
+    return numbers.pop()
 
 
 def find_mean(numbers: list) -> float:
-    # TODO: write function to find the mean of a list of numbers
-    pass
+    x = sum(numbers)
+    y = len(numbers)
+    if y == 0:
+        raise ZeroDivisionError("Dont divide for zero")
+    return x/y
 
 
 def find_median(numbers: list) -> float:
-    # TODO: write function to find the median of a list of numbers
-    pass
+    numbers.sort()
+    longitud = len(numbers)
+    medium = longitud // 2
 
+    if longitud == 0:
+        raise ZeroDivisionError
+
+    if longitud % 2 == 0:
+        median = (numbers[medium - 1] + numbers[medium]) / 2
+    else:
+        median = numbers[medium]
+
+    return median
 
 def find_mode(numbers: list) -> int:
-    # TODO: write function to find the mode of a list of numbers
-    pass
+    if numbers.__len__() == 0:
+        raise RuntimeError("The list lenght must be > 0")
+    frequency = {}
+    for number in numbers:
+        frequency[number] = frequency.get(number, 0) + 1
+    
+
+    max_count = 0
+    mode = None
+    for number, count in frequency.items():
+        if count > max_count:
+            max_count = count
+            mode = number
+    return mode
 
 
 def factorial(n: int) -> int:
-    # TODO: write function to find the factorial of a number
-    pass
+    result = 1
+    if n < 0: 
+        raise ValueError("The factorial must be a natural value")
+    if n == 0:
+        return 1
+    for i in range(1, n + 1):
+        result *= i
+    return result
 
 
 def is_prime(n: int) -> bool:
-    # TODO: write function to check if a number is prime
-    pass
+    if n <= 1:
+        return False
+    for i in range(2, int(n** 0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
 
 
 def is_palindrome(word: str) -> bool:
-    # TODO: write function to check if a word is a palindrome
-    pass
+    return word == word[::-1]
 
 
 def reverse_string(string: str) -> str:
-    # TODO: write function to reverse a string
-    pass
+    reversed_string = ""
+    for char in string:
+        reversed_string = char + reversed_string
+    return reversed_string
 
 
 def list_sum(numbers: list) -> int:
-    # TODO: write function to sum a list of numbers
-    pass
+    return sum(numbers)
 
 
 def list_product(numbers: list) -> int:
-    # TODO: write function to multiply a list of numbers
-    pass
+    if numbers.__len__() == 0:
+        return 0
+    result = 1
+    for number in numbers:
+        result *= number
+    return result
