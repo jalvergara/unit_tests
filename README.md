@@ -30,3 +30,6 @@ pytest --cov
 7. add your changes (git add, git commit)
 8. push your branch: git push origin feature/your_function_name_your_name
 9. go to the github repository and create a pull request
+
+## Screenshot
+![Test Passed](img/test_passed.png)
