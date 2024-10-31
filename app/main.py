@@ -1,7 +1,7 @@
 """ main functions to explain unit testing"""
 
 import pandas as pd
-
+from statistics import mean, median, mode
 
 def add(a: int, b: int) -> int:
     """Function to add two numbers
@@ -99,60 +99,77 @@ def square(a: int) -> int:
 
 
 def is_even(x: int) -> bool:
-    # TODO: write function to check if a number is even
-    pass
+    return x % 2 == 0
 
 
 def find_max(numbers: list) -> int:
-    # TODO: write function to find the maximum number in a list
-    pass
+    if not numbers:
+        raise ValueError("La lista no puede estar vacía.")
+    return max(numbers)
 
 
 def find_min(numbers: list) -> int:
-    # TODO: write function to find the minimum number in a list
-    pass
-
+    if not numbers:
+        raise ValueError("La lista no puede estar vacía.")
+    return min(numbers)
 
 def find_mean(numbers: list) -> float:
-    # TODO: write function to find the mean of a list of numbers
-    pass
+    if not numbers:
+        raise ValueError("La lista no puede estar vacía.")
+    return mean(numbers)
 
 
 def find_median(numbers: list) -> float:
-    # TODO: write function to find the median of a list of numbers
-    pass
-
+    if not numbers:
+        raise ValueError("La lista no puede estar vacía.")
+    return median(numbers)
 
 def find_mode(numbers: list) -> int:
-    # TODO: write function to find the mode of a list of numbers
-    pass
+    if not numbers:
+        raise ValueError("La lista no puede estar vacía.")
+    return mode(numbers)
 
 
 def factorial(n: int) -> int:
-    # TODO: write function to find the factorial of a number
-    pass
+    if n < 0:
+        raise ValueError("El número no puede ser negativo")
+    if n == 0 or n == 1:
+        return 1
+    result = 1
+    for i in range(2, n + 1):
+        result *= i
+    return result
 
 
 def is_prime(n: int) -> bool:
-    # TODO: write function to check if a number is prime
-    pass
+    if n <= 1:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
 
 
 def is_palindrome(word: str) -> bool:
-    # TODO: write function to check if a word is a palindrome
-    pass
+    if word is None:
+        raise ValueError("El argumento no puede ser None.")
+    
+    clean_word = ''.join(word.split()).lower()
+    return clean_word == clean_word[::-1]
 
 
 def reverse_string(string: str) -> str:
-    # TODO: write function to reverse a string
-    pass
-
+    return string[::-1]
 
 def list_sum(numbers: list) -> int:
-    # TODO: write function to sum a list of numbers
-    pass
-
+    if not numbers:
+        raise ValueError("La lista no puede estar vacía.")
+    return sum(numbers)
 
 def list_product(numbers: list) -> int:
-    # TODO: write function to multiply a list of numbers
-    pass
+    if not numbers:
+        raise ValueError("La lista no puede estar vacía.")
+    product = 1
+    for number in numbers:
+        product *= number
+    return product
