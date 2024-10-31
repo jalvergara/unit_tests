@@ -107,12 +107,15 @@ def test_is_prime():
 def test_is_palindrome():
     assert is_palindrome("radar") is True
     assert is_palindrome("hello") is False
+    assert is_palindrome("saippuakivikauppias") is True
 
 
 def test_reverse_string():
     assert reverse_string("hello") == "olleh"
     assert reverse_string("world") == "dlrow"
     assert reverse_string("zapallo") == "ollapaz"
+    assert reverse_string("electroencefalografista") == "atsifargolafecneortcele"
+
 
 def test_list_sum():
     assert list_sum([1, 2, 3, 4]) == 10
