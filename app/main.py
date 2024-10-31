@@ -2,7 +2,6 @@
 
 import pandas as pd
 
-
 def add(a: int, b: int) -> int:
     """Function to add two numbers
 
@@ -19,7 +18,6 @@ def add(a: int, b: int) -> int:
         a '+' b
     """
     return a + b
-
 
 def divide(a: int, b: int) -> float:
     """_summary_
@@ -43,9 +41,7 @@ def divide(a: int, b: int) -> float:
     """
     if b == 0:
         raise ValueError("Division by zero is not allowed")
-
     return a / b
-
 
 # Function to validate that a Pandas DataFrame has no null values
 def validate_no_null_values(df: pd.DataFrame) -> bool:
@@ -63,7 +59,6 @@ def validate_no_null_values(df: pd.DataFrame) -> bool:
     """
     return not df.isnull().values.any()
 
-
 def db_query() -> str:
     """function to mock a database query
 
@@ -74,72 +69,84 @@ def db_query() -> str:
     """
     return "DATA: [1, 2, 3]"
 
-
-# Alejandro Vergara
+# JPGC 
 def subtract(a: int, b: int) -> int:
-    # TODO: write function to substract two numbers
-    pass
+    # HECHO: función para restar dos números
+    return a - b
 
 def square(a: int) -> int:
-    # TODO: write function to square a number
-    pass
-
+    # HECHO: función para calcular el cuadrado de un número
+    return a * a
 
 def is_even(x: int) -> bool:
-    # TODO: write function to check if a number is even
-    pass
-
+    # HECHO: función para verificar si un número es par
+    return x % 2 == 0
 
 def find_max(numbers: list) -> int:
-    # TODO: write function to find the maximum number in a list
-    pass
-
+    # HECHO: función para encontrar el número máximo en una lista
+    return max(numbers) if numbers else None
 
 def find_min(numbers: list) -> int:
-    # TODO: write function to find the minimum number in a list
-    pass
-
+    # HECHO: función para encontrar el número mínimo en una lista
+    return min(numbers) if numbers else None
 
 def find_mean(numbers: list) -> float:
-    # TODO: write function to find the mean of a list of numbers
-    pass
-
+    # HECHO: función para calcular la media de una lista de números
+    return sum(numbers) / len(numbers) if numbers else None
 
 def find_median(numbers: list) -> float:
-    # TODO: write function to find the median of a list of numbers
-    pass
+    # HECHO: función para calcular la mediana de una lista de números
+    sorted_numbers = sorted(numbers)
+    n = len(sorted_numbers)
+    if n == 0:
+        return None
+    middle = n // 2
+    if n % 2 == 0:
+        return (sorted_numbers[middle - 1] + sorted_numbers[middle]) / 2
+    else:
+        return sorted_numbers[middle]
 
+from collections import Counter
 
 def find_mode(numbers: list) -> int:
-    # TODO: write function to find the mode of a list of numbers
-    pass
+    # HECHO: función para encontrar la moda en una lista de números
+    if not numbers:
+        return None
+    count = Counter(numbers)
+    return count.most_common(1)[0][0]
 
+import math
 
 def factorial(n: int) -> int:
-    # TODO: write function to find the factorial of a number
-    pass
-
+    # HECHO: función para calcular el factorial de un número
+    if n < 0:
+        return None
+    return math.factorial(n)
 
 def is_prime(n: int) -> bool:
-    # TODO: write function to check if a number is prime
-    pass
-
+    # HECHO: función para verificar si un número es primo
+    if n <= 1:
+        return False
+    for i in range(2, int(math.sqrt(n)) + 1):
+        if n % i == 0:
+            return False
+    return True
 
 def is_palindrome(word: str) -> bool:
-    # TODO: write function to check if a word is a palindrome
-    pass
-
+    # HECHO: función para verificar si una palabra es un palíndromo
+    return word == word[::-1]
 
 def reverse_string(string: str) -> str:
-    # TODO: write function to reverse a string
-    pass
-
+    # HECHO: función para invertir una cadena de texto
+    return string[::-1]
 
 def list_sum(numbers: list) -> int:
-    # TODO: write function to sum a list of numbers
-    pass
-
+    # HECHO: función para sumar una lista de números
+    return sum(numbers)
 
 def list_product(numbers: list) -> int:
-    # TODO: write function to multiply a list of numbers
-    pass
+    # HECHO: función para multiplicar una lista de números
+    product = 1
+    for number in numbers:
+        product *= number
+    return product
