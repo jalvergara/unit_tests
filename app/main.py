@@ -151,9 +151,6 @@ def is_prime(n: int) -> bool:
 
 
 def is_palindrome(word: str) -> bool:
-    if word is None:
-        raise ValueError("El argumento no puede ser None.")
-    
     clean_word = ''.join(word.split()).lower()
     return clean_word == clean_word[::-1]
 
