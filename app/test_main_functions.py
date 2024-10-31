@@ -5,7 +5,7 @@ import pytest
 
 from unittest import mock
 
-from .main import add, divide, validate_no_null_values, db_query, subtract
+from .main import *
 
 
 def test_add():
@@ -45,70 +45,57 @@ def test_db_query():
 
 # Alejandro Vergara
 def test_subtract():
-    pass
-
+    """Test cases for the subtract function."""
+    assert subtract(5, 3) == 2
 
 def test_square():
-    # TODO: write the tests cases for the square function
-    pass
-
-
+    """Test cases for the square function."""
+    assert square(5) == 25
 
 def test_is_even():
-    # TODO: write the tests cases for the is_even function
-    pass
-
+    """Test cases for the is_even function."""
+    assert is_even(4) is True
 
 def test_find_max():
-    # TODO: write the tests cases for the find_max function
-    pass
-
+    """Test cases for the find_max function."""
+    assert find_max([1, 2, 3, 4, 5]) == 5
 
 def test_find_min():
-    # TODO: write the tests cases for the find_min function
-    pass
-
+    """Test cases for the find_min function."""
+    assert find_min([1, 2, 3, 4, 5]) == 1
 
 def test_find_mean():
-    # TODO: write the tests cases for the find_mean function
-    pass
-
+    """Test cases for the find_mean function."""
+    assert find_mean([1, 2, 3, 4, 5]) == 3.0
 
 def test_find_median():
-    # TODO: write the tests cases for the find_median function
-    pass
-
+    """Test cases for the find_median function."""
+    assert find_median([1, 2, 3, 4, 5]) == 3
 
 def test_find_mode():
-    # TODO: write the tests cases for the find_mode function
-    pass
-
+    """Test cases for the find_mode function."""
+    assert find_mode([1, 2, 2, 3, 4, 5]) == 2
 
 def test_factorial():
-    # TODO: write the tests cases for the factorial function
-    pass
-
+    """Test cases for the factorial function."""
+    assert factorial(5) == 120
 
 def test_is_prime():
-    # TODO: write the tests cases for the is_prime function
-    pass
-
+    """Test cases for the is_prime function."""
+    assert is_prime(7) is True
 
 def test_is_palindrome():
-    # TODO: write the tests cases for the is_palindrome function
-    pass
-
+    """Test cases for the is_palindrome function."""
+    assert is_palindrome('racecar') is True
 
 def test_reverse_string():
-    # TODO: write the tests cases for the reverse_string function
-    pass
-
+    """Test cases for the reverse_string function."""
+    assert reverse_string('hello') == 'olleh'
 
 def test_list_sum():
-    # TODO: write the tests cases for the list_sum function
-    pass
-
+    """Test cases for the list_sum function."""
+    assert list_sum([1, 2, 3, 4, 5]) == 15
 
 def test_list_product():
-    # TODO: write the tests cases for the list_product function
-    pass
+    """Test cases for the list_product function."""
+    assert list_product([1, 2, 3, 4, 5]) == 120
