@@ -77,69 +77,266 @@ def db_query() -> str:
 
 # Alejandro Vergara
 def subtract(a: int, b: int) -> int:
-    # TODO: write function to substract two numbers
-    pass
+    """
+    Resta dos números.
+
+    Parameters
+    ----------
+    a : int
+        primer número
+    b : int
+        segundo número
+
+    Returns
+    -------
+    int
+        resultado de a - b
+    """
+    return a - b
+
+
 
 def square(a: int) -> int:
-    # TODO: write function to square a number
-    pass
+    """
+    Calcula el cuadrado de un número.
+
+    Parameters
+    ----------
+    a : int
+        número a elevar al cuadrado
+
+    Returns
+    -------
+    int
+        cuadrado de a
+    """
+    return a * a
+
 
 
 def is_even(x: int) -> bool:
-    # TODO: write function to check if a number is even
-    pass
+    """
+    Verifica si un número es par.
+
+    Parameters
+    ----------
+    x : int
+        número a verificar
+
+    Returns
+    -------
+    bool
+        True si x es par, False de lo contrario
+    """
+    return x % 2 == 0
 
 
 def find_max(numbers: list) -> int:
-    # TODO: write function to find the maximum number in a list
-    pass
+    """
+    Encuentra el valor máximo en una lista de números.
+
+    Parameters
+    ----------
+    numbers : list
+        Lista de números.
+
+    Returns
+    -------
+    int
+        Valor máximo de la lista.
+    """
+    return max(numbers)
+
 
 
 def find_min(numbers: list) -> int:
-    # TODO: write function to find the minimum number in a list
-    pass
+    """
+    Encuentra el valor mínimo en una lista de números.
+
+    Parameters
+    ----------
+    numbers : list
+        Lista de números.
+
+    Returns
+    -------
+    int
+        Valor mínimo de la lista.
+    """
+    return min(numbers)
+
 
 
 def find_mean(numbers: list) -> float:
-    # TODO: write function to find the mean of a list of numbers
-    pass
+    """
+    Calcula la media de una lista de números.
+
+    Parameters
+    ----------
+    numbers : list
+        Lista de números.
+
+    Returns
+    -------
+    float
+        Media de la lista.
+    """
+    return sum(numbers) / len(numbers)
+
 
 
 def find_median(numbers: list) -> float:
-    # TODO: write function to find the median of a list of numbers
-    pass
+    """
+    Calcula la mediana de una lista de números.
 
+    Parameters
+    ----------
+    numbers : list
+        Lista de números.
+
+    Returns
+    -------
+    float
+        Mediana de la lista.
+    """
+    sorted_numbers = sorted(numbers)
+    n = len(sorted_numbers)
+    middle = n // 2
+    if n % 2 == 0:
+        return (sorted_numbers[middle - 1] + sorted_numbers[middle]) / 2
+    else:
+        return sorted_numbers[middle]
+
+
+
+from collections import Counter
 
 def find_mode(numbers: list) -> int:
-    # TODO: write function to find the mode of a list of numbers
-    pass
+    """
+    Encuentra la moda en una lista de números.
+
+    Parameters
+    ----------
+    numbers : list
+        Lista de números.
+
+    Returns
+    -------
+    int
+        Moda de la lista.
+    """
+    counter = Counter(numbers)
+    return max(counter, key=counter.get)
 
 
 def factorial(n: int) -> int:
-    # TODO: write function to find the factorial of a number
-    pass
+    """
+    Calcula el factorial de un número entero.
+
+    Parameters
+    ----------
+    n : int
+        Número entero.
+
+    Returns
+    -------
+    int
+        Factorial del número n.
+    """
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n - 1)
 
 
 def is_prime(n: int) -> bool:
-    # TODO: write function to check if a number is prime
-    pass
+    """
+    Verifica si un número es primo.
+
+    Parameters
+    ----------
+    n : int
+        Número a verificar.
+
+    Returns
+    -------
+    bool
+        True si el número es primo, False de lo contrario.
+    """
+    if n <= 1:
+        return False
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
 
 
 def is_palindrome(word: str) -> bool:
-    # TODO: write function to check if a word is a palindrome
-    pass
+    """
+    Verifica si una palabra es un palíndromo.
+
+    Parameters
+    ----------
+    word : str
+        Palabra a verificar.
+
+    Returns
+    -------
+    bool
+        True si es un palíndromo, False de lo contrario.
+    """
+    return word == word[::-1]
 
 
 def reverse_string(string: str) -> str:
-    # TODO: write function to reverse a string
-    pass
+    """
+    Invierte una cadena de texto.
+
+    Parameters
+    ----------
+    string : str
+        Cadena a invertir.
+
+    Returns
+    -------
+    str
+        Cadena invertida.
+    """
+    return string[::-1]
 
 
 def list_sum(numbers: list) -> int:
-    # TODO: write function to sum a list of numbers
-    pass
+    """
+    Calcula la suma de una lista de números.
+
+    Parameters
+    ----------
+    numbers : list
+        Lista de números.
+
+    Returns
+    -------
+    int
+        Suma de todos los números en la lista.
+    """
+    return sum(numbers)
 
 
 def list_product(numbers: list) -> int:
-    # TODO: write function to multiply a list of numbers
-    pass
+    """
+    Calcula el producto de una lista de números.
+
+    Parameters
+    ----------
+    numbers : list
+        Lista de números.
+
+    Returns
+    -------
+    int
+        Producto de todos los números en la lista.
+    """
+    product = 1
+    for number in numbers:
+        product *= number
+    return product
