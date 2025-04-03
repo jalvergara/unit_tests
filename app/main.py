@@ -77,69 +77,345 @@ def db_query() -> str:
 
 # Alejandro Vergara
 def subtract(a: int, b: int) -> int:
-    # TODO: write function to substract two numbers
-    pass
+    """Function to subtract two numbers
+
+    Parameters
+    ----------
+    a : int
+        first digit to subtract
+    b : int
+        second digit to subtract
+
+    Returns
+    -------
+    int
+        a '-' b
+    """
+    return a - b
+
 
 def square(a: int) -> int:
-    # TODO: write function to square a number
-    pass
+    """Funtion to square a number 
+    parameters
+    ----------  
+    a : int
+        number to square
+    -------
+    int
+        a squared
+    """
+    if not isinstance(a, (int)):  
+        raise TypeError("The input must be a number (int)")
+    
+    return a ** 2
 
 
 def is_even(x: int) -> bool:
-    # TODO: write function to check if a number is even
-    pass
+    """Function to check if a number is even
+
+    Parameters
+    ----------
+    x : int
+        number to check
+
+    Returns
+    -------
+    bool
+        True if even, False otherwise
+    """
+    
+    if not isinstance(x, (int)):  
+        raise TypeError("The input must be a number (int)")
+    
+    return x % 2 == 0
 
 
 def find_max(numbers: list) -> int:
-    # TODO: write function to find the maximum number in a list
-    pass
+    """Function to find the maximum number in a list
+    parameters
+    ----------      
+    numbers : list
+        list of numbers
+    returns
+    ------- 
+    int
+        maximum number in the list
+
+    """
+    if not isinstance(numbers, list):
+        raise TypeError("Input must be a list")
+
+    if not all(isinstance(num, (int, float)) for num in numbers):
+        raise TypeError("All elements in the list must be numbers (int or float)")
+    
+    if len(numbers) == 0:
+        raise ValueError("The list is empty")
+
+    max_value = numbers[0] 
+    for num in numbers:
+        if num > max_value:
+            max_value = num
+    return max_value
 
 
 def find_min(numbers: list) -> int:
-    # TODO: write function to find the minimum number in a list
-    pass
+    """Function to find the minimum number in a list
+    parameters
+    ----------      
+    numbers : list
+        list of numbers
+    
+    returns
+    ------- 
+    int
+        minimum number in the list
+
+    """
+    if not isinstance(numbers, list):
+        raise TypeError("Input must be a list")
+
+    if not all(isinstance(num, (int, float)) for num in numbers):
+        raise TypeError("All elements in the list must be numbers (int or float)")
+    
+    if len(numbers) == 0:
+        raise ValueError("The list is empty")
+
+    min_value = numbers[0]  
+    for num in numbers:
+        if num < min_value: 
+            min_value = num
+    return min_value
 
 
 def find_mean(numbers: list) -> float:
-    # TODO: write function to find the mean of a list of numbers
-    pass
+    """Function to find the mean of a list of numbers
+    parameters
+    ----------      
+    numbers : list
+        list of numbers
+    returns
+    -------
+    float
+        mean of the numbers in the list
+
+    """
+    if not isinstance(numbers, list):
+        raise TypeError("Input must be a list")
+
+    if not all(isinstance(num, (int, float)) for num in numbers):
+        raise TypeError("All elements in the list must be numbers (int or float)")
+    
+    if len(numbers) == 0:
+        raise ValueError("The list is empty")
+    
+    total = sum(numbers)
+    count = len(numbers)
+    mean = total / count
+    return mean
 
 
 def find_median(numbers: list) -> float:
-    # TODO: write function to find the median of a list of numbers
-    pass
+    """Function to find the median of a list of numbers
+    parameters
+    ----------      
+    numbers : list
+        list of numbers
+    returns
+    -------
+    float
+        median of the numbers in the list
+
+    """
+    if not isinstance(numbers, list):
+        raise TypeError("Input must be a list")
+
+    if not all(isinstance(num, (int, float)) for num in numbers):
+        raise TypeError("All elements in the list must be numbers (int or float)")
+    
+    if len(numbers) == 0:
+        raise ValueError("The list is empty")
+    
+    numbers.sort()
+    count = len(numbers)
+
+    if count % 2 == 0:
+        middle1 = numbers[count // 2 - 1]
+        middle2 = numbers[count // 2]
+        median = (middle1 + middle2) / 2
+    else:
+        median = numbers[count // 2]
+    return median
 
 
 def find_mode(numbers: list) -> int:
-    # TODO: write function to find the mode of a list of numbers
-    pass
+    """Function to find the mode of a list of numbers
+    parameters
+    ----------      
+    numbers : list
+        list of numbers
+    returns
+    -------
+    int
+        mode of the numbers in the list
+
+    """
+    if not isinstance(numbers, list):
+        raise TypeError("Input must be a list")
+
+    if not all(isinstance(num, (int, float)) for num in numbers):
+        raise TypeError("All elements in the list must be numbers (int or float)")
+    
+    if len(numbers) == 0:
+        raise ValueError("The list is empty")
+    
+    frecuency = {}
+    for num in numbers:
+        if num in frecuency:
+            frecuency[num] += 1
+        else:
+            frecuency[num] = 1
+    max_count = max(frecuency.values())
+    moda = [num for num, count in frecuency.items() if count == max_count]
+    if len(moda) > 1:
+        raise ValueError("No unique mode found")
+    return moda[0]
 
 
 def factorial(n: int) -> int:
-    # TODO: write function to find the factorial of a number
-    pass
+    """Function to calculate the factorial of a number
+    parameters
+    ----------      
+    n : int
+        number to calculate the factorial of
+    returns
+    -------
+    int
+        factorial of the number
+
+    """
+    if not isinstance(n, (int)):  
+        raise TypeError("The input must be a number (int)")
+    
+    if n < 0:
+        raise ValueError("Factorial is not defined for negative numbers")
+    i = 1
+    factorial = 1
+    while (i <= n):
+        factorial = factorial * i
+        i = i + 1
+
+    return factorial
 
 
 def is_prime(n: int) -> bool:
-    # TODO: write function to check if a number is prime
-    pass
+    """Function to check if a number is prime
+    parameters
+    ----------      
+    n : int
+        number to check
+    returns
+    -------
+    bool
+        True if prime, False otherwise
+
+    """
+    if not isinstance(n, (int)):  
+        raise TypeError("The input must be a number (int)")
+    
+    if n <= 1 or (n > 3 and (n % 2 == 0 or n % 3 == 0)):
+        return False
+
+    return all(n % i != 0 and n % (i + 2) != 0 for i in range(5, int(n ** 0.5) + 1, 6))
+
 
 
 def is_palindrome(word: str) -> bool:
-    # TODO: write function to check if a word is a palindrome
-    pass
+    """Function to check if a word is a palindrome
+    parameters
+    ----------      
+    word : str
+        word to check
+    returns
+    -------
+    bool
+        True if palindrome, False otherwise
+
+    """
+    if not isinstance(word, (str)):  
+        raise TypeError("The input must be a string")
+    if len(word) == 0:
+        raise ValueError("The word is empty")
+    
+    word = word.lower()
+    return word == word[::-1]
 
 
 def reverse_string(string: str) -> str:
-    # TODO: write function to reverse a string
-    pass
+    """Function to reverse a string
+    parameters
+    ----------      
+    string : str
+        string to reverse
+    returns
+    -------
+    str
+        reversed string
+
+    """
+    if not isinstance(string, (str)):  
+        raise TypeError("The input must be a string")
+    if len(string) == 0:
+        raise ValueError("The string is empty")
+    
+    return string[::-1]
 
 
 def list_sum(numbers: list) -> int:
-    # TODO: write function to sum a list of numbers
-    pass
+    """Function to sum a list of numbers
+    parameters
+    ----------      
+    numbers : list
+        list of numbers
+    returns
+    -------
+    int
+        sum of the numbers in the list
+
+    """
+    if not isinstance(numbers, list):
+        raise TypeError("Input must be a list")
+
+    if not all(isinstance(num, (int, float)) for num in numbers):
+        raise TypeError("All elements in the list must be numbers (int or float)")
+    
+    if len(numbers) == 0:
+        raise ValueError("The list is empty")
+    return sum(numbers)
 
 
 def list_product(numbers: list) -> int:
-    # TODO: write function to multiply a list of numbers
-    pass
+    """Function to multiply a list of numbers
+    parameters
+    ----------      
+    numbers : list
+        list of numbers
+    returns
+    -------
+    int
+        product of the numbers in the list
+
+    """
+    if not isinstance(numbers, list):
+        raise TypeError("Input must be a list")
+    if not all(isinstance(num, (int, float)) for num in numbers):
+        raise TypeError("All elements in the list must be numbers (int or float)")
+    
+    if len(numbers) == 0:
+        raise ValueError("The list is empty")
+    
+    multiplier = 1
+    for num in numbers:
+        multiplier *= num
+    return multiplier
+
+
