@@ -1,6 +1,7 @@
 """ main functions to explain unit testing"""
 
 import pandas as pd
+from collections import Counter
 
 
 def add(a: int, b: int) -> int:
@@ -75,71 +76,319 @@ def db_query() -> str:
     return "DATA: [1, 2, 3]"
 
 
-# Alejandro Vergara
+# FUNCIONES IMPLEMENTADAS:
+
 def subtract(a: int, b: int) -> int:
-    # TODO: write function to substract two numbers
-    pass
+    """Function to subtract two numbers
+
+    Parameters
+    ----------
+    a : int
+        The number from which to subtract
+    b : int
+        The number to subtract
+
+    Returns
+    -------
+    int
+        The result of a - b
+    """
+    return a - b
+
 
 def square(a: int) -> int:
-    # TODO: write function to square a number
-    pass
+    """Function to calculate the square of a number
+
+    Parameters
+    ----------
+    a : int
+        The number to square
+
+    Returns
+    -------
+    int
+        The square of a
+    """
+    return a * a
 
 
 def is_even(x: int) -> bool:
-    # TODO: write function to check if a number is even
-    pass
+    """Function to check if a number is even
+
+    Parameters
+    ----------
+    x : int
+        The number to check
+
+    Returns
+    -------
+    bool
+        True if x is even, False otherwise
+    """
+    return x % 2 == 0
 
 
 def find_max(numbers: list) -> int:
-    # TODO: write function to find the maximum number in a list
-    pass
+    """Function to find the maximum number in a list
+
+    Parameters
+    ----------
+    numbers : list
+        A list of numbers
+
+    Returns
+    -------
+    int
+        The maximum number in the list
+
+    Raises
+    ------
+    ValueError
+        If the list is empty
+    """
+    if not numbers:
+        raise ValueError("Cannot find maximum of an empty list")
+    return max(numbers)
 
 
 def find_min(numbers: list) -> int:
-    # TODO: write function to find the minimum number in a list
-    pass
+    """Function to find the minimum number in a list
+
+    Parameters
+    ----------
+    numbers : list
+        A list of numbers
+
+    Returns
+    -------
+    int
+        The minimum number in the list
+
+    Raises
+    ------
+    ValueError
+        If the list is empty
+    """
+    if not numbers:
+        raise ValueError("Cannot find minimum of an empty list")
+    return min(numbers)
 
 
 def find_mean(numbers: list) -> float:
-    # TODO: write function to find the mean of a list of numbers
-    pass
+    """Function to calculate the mean of a list of numbers
+
+    Parameters
+    ----------
+    numbers : list
+        A list of numbers
+
+    Returns
+    -------
+    float
+        The mean of the numbers in the list
+
+    Raises
+    ------
+    ValueError
+        If the list is empty
+    """
+    if not numbers:
+        raise ValueError("Cannot calculate mean of an empty list")
+    return sum(numbers) / len(numbers)
 
 
 def find_median(numbers: list) -> float:
-    # TODO: write function to find the median of a list of numbers
-    pass
+    """Function to find the median of a list of numbers
+
+    Parameters
+    ----------
+    numbers : list
+        A list of numbers
+
+    Returns
+    -------
+    float
+        The median of the numbers in the list
+
+    Raises
+    ------
+    ValueError
+        If the list is empty
+    """
+    if not numbers:
+        raise ValueError("Cannot calculate median of an empty list")
+    sorted_numbers = sorted(numbers)
+    n = len(sorted_numbers)
+    if n % 2 == 0:
+        return (sorted_numbers[n//2 - 1] + sorted_numbers[n//2]) / 2
+    else:
+        return sorted_numbers[n//2]
 
 
 def find_mode(numbers: list) -> int:
-    # TODO: write function to find the mode of a list of numbers
-    pass
+    """Function to find the mode of a list of numbers
+
+    Parameters
+    ----------
+    numbers : list
+        A list of numbers
+
+    Returns
+    -------
+    int
+        The mode of the numbers in the list
+
+    Raises
+    ------
+    ValueError
+        If the list is empty
+    """
+    if not numbers:
+        raise ValueError("Cannot calculate mode of an empty list")
+    counter = Counter(numbers)
+    return counter.most_common(1)[0][0]
 
 
 def factorial(n: int) -> int:
-    # TODO: write function to find the factorial of a number
-    pass
+    """Function to calculate the factorial of a number
+
+    Parameters
+    ----------
+    n : int
+        The number to calculate the factorial of
+
+    Returns
+    -------
+    int
+        The factorial of n
+
+    Raises
+    ------
+    ValueError
+        If n is negative
+    """
+    if n < 0:
+        raise ValueError("Factorial is not defined for negative numbers")
+    if n == 0:
+        return 1
+    result = 1
+    for i in range(1, n + 1):
+        result *= i
+    return result
 
 
 def is_prime(n: int) -> bool:
-    # TODO: write function to check if a number is prime
-    pass
+    """Function to check if a number is prime
+
+    Parameters
+    ----------
+    n : int
+        The number to check
+
+    Returns
+    -------
+    bool
+        True if n is prime, False otherwise
+    """
+    if n <= 1:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
 
 
 def is_palindrome(word: str) -> bool:
-    # TODO: write function to check if a word is a palindrome
-    pass
+    """Function to check if a word is a palindrome
+
+    Parameters
+    ----------
+    word : str
+        The word to check
+
+    Returns
+    -------
+    bool
+        True if word is a palindrome, False otherwise
+
+    Raises
+    ------
+    ValueError
+        If the word is empty
+    """
+    word = ''.join(char.lower() for char in word if char.isalnum()) # I wanted to make it so that phrases also count
+    if not word:
+        raise ValueError("Cannot check palindrome for an empty string")
+    return word == word[::-1]
 
 
 def reverse_string(string: str) -> str:
-    # TODO: write function to reverse a string
-    pass
+    """Function to reverse a string
+
+    Parameters
+    ----------
+    string : str
+        The string to reverse
+
+    Returns
+    -------
+    str
+        The reversed string
+
+    Raises
+    ------
+    ValueError
+        If the string is empty
+    """
+    if not string:
+        raise ValueError("Cannot reverse an empty string")
+    return string[::-1]
 
 
 def list_sum(numbers: list) -> int:
-    # TODO: write function to sum a list of numbers
-    pass
+    """Function to calculate the sum of a list of numbers
+
+    Parameters
+    ----------
+    numbers : list
+        A list of numbers
+
+    Returns
+    -------
+    int
+        The sum of the numbers in the list
+
+    Raises
+    ------
+    ValueError
+        If the list is empty
+    """
+    if not numbers:
+        raise ValueError("Cannot sum an empty list")
+    return sum(numbers)
 
 
 def list_product(numbers: list) -> int:
-    # TODO: write function to multiply a list of numbers
-    pass
+    """Function to calculate the product of a list of numbers
+
+    Parameters
+    ----------
+    numbers : list
+        A list of numbers
+
+    Returns
+    -------
+    int
+        The product of the numbers in the list
+
+    Raises
+    ------
+    ValueError
+        If the list is empty
+    """
+    if not numbers:
+        raise ValueError("Cannot calculate product of an empty list")
+    result = 1
+    for num in numbers:
+        result *= num
+    return result
