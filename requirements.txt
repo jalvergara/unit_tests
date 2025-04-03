@@ -1,0 +1,13 @@
+colorama
+coverage
+pytest
+iniconfig
+numpy
+pandas
+packaging
+pluggy
+pytest-cov
+python-dateutil
+pytz
+six
+tzdata

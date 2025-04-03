@@ -1,4 +1,4 @@
-# Repository to explain about unit testing
+# **Repository to explain about unit testing**
 
 create virtual env
 
@@ -6,20 +6,20 @@ python -m venv venv
 
 activate with :
 
-source data_validation_env/bin/activate
+source venv/bin/activate
 
-pip install pytest, pandas, pytest-cov
+pip install -r requirements.txt
 
 to run the tests:
-pytest tests/test_main_functions.py -s -v
+pytest app/test_main_functions.py -s -v
 
 to run the coverage:
 
 pytest --cov
 
-## Exercise:
+## **Exercise:**
 
-### Create tests:
+### **Create tests:**
 
 1. create a branch with the name: feature/function_your_name , example: git checkout -b feature/function_alejandro
 2. create a docstring for all functions
