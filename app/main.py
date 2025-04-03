@@ -197,7 +197,7 @@ def find_median(numbers: list) -> float:
     else:
         return sorted_numbers[mid]
 
-###########################################################################
+
 def find_mode(numbers: list) -> int:
     """Function to find the mode of a list of numbers
 

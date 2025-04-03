@@ -99,7 +99,7 @@ def test_find_median():
     assert find_median([5, 2, 1]) == 2
     assert find_median([7, -1, 2, 0]) == 1.0
 
-###########################################################################
+
 def test_find_mode():
     """Test cases for the find_mode function"""
     assert find_mode([1, 2, 2, 3, 4]) == 2
