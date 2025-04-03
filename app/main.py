@@ -1,6 +1,7 @@
 """ main functions to explain unit testing"""
 
 import pandas as pd
+from collections import Counter
 
 
 def add(a: int, b: int) -> int:
@@ -77,69 +78,249 @@ def db_query() -> str:
 
 # Alejandro Vergara
 def subtract(a: int, b: int) -> int:
-    # TODO: write function to substract two numbers
-    pass
+    """Function to substract two numbers
+
+    Parameters
+    ----------
+    a : int
+        first digit to add
+    b : int
+        second digit to add
+
+    Returns
+    -------
+    int
+        a '-' b
+    """
+    return a - b
+
 
 def square(a: int) -> int:
-    # TODO: write function to square a number
-    pass
+    """Function to square a number
+
+    Parameters
+    ----------
+    a : int
+        digit to square
+
+    Returns
+    -------
+    int
+        a^2
+    """
+    return a * a
 
 
 def is_even(x: int) -> bool:
-    # TODO: write function to check if a number is even
-    pass
+    """Function to check if a number is even
+
+    Parameters
+    ----------
+    x : int
+        digit to check
+
+    Returns
+    -------
+    bool
+        True if number is even, False if number is odd
+    """
+    return x % 2 == 0
 
 
 def find_max(numbers: list) -> int:
-    # TODO: write function to find the maximum number in a list
-    pass
+    """Function to find the maximum number in a list
+
+    Parameters
+    ----------
+    numbers : list
+        number list
+
+    Returns
+    -------
+    int
+        the maximum number in a list
+    """
+    return max(numbers)
 
 
 def find_min(numbers: list) -> int:
-    # TODO: write function to find the minimum number in a list
-    pass
+    """Function to find the minimum number in a list
+
+    Parameters
+    ----------
+    numbers : list
+        number list
+
+    Returns
+    -------
+    int
+        the minimum number in a list
+    """
+    return min(numbers)
 
 
 def find_mean(numbers: list) -> float:
-    # TODO: write function to find the mean of a list of numbers
-    pass
+    """Function to find the mean of a list of numbers
+
+    Parameters
+    ----------
+    numbers : list
+        number list
+
+    Returns
+    -------
+    float
+        the mean in a list of numbers
+    """
+    return sum(numbers) / len(numbers)
 
 
 def find_median(numbers: list) -> float:
-    # TODO: write function to find the median of a list of numbers
-    pass
+    """Function to find the median of a list of numbers
 
+    Parameters
+    ----------
+    numbers : list
+        number list
 
+    Returns
+    -------
+    float
+        median value
+    """
+    sorted_numbers = sorted(numbers)
+    n = len(sorted_numbers)
+    mid = n // 2
+
+    if n % 2 == 0:
+        return (sorted_numbers[mid - 1] + sorted_numbers[mid]) / 2
+    else:
+        return sorted_numbers[mid]
+
+###########################################################################
 def find_mode(numbers: list) -> int:
-    # TODO: write function to find the mode of a list of numbers
-    pass
+    """Function to find the mode of a list of numbers
+
+    Parameters
+    ----------
+    numbers : list
+        number list
+
+    Returns
+    -------
+    int
+        Mode of the numbers
+    """
+    counts = Counter(numbers)
+    return counts.most_common(1)[0][0]
 
 
 def factorial(n: int) -> int:
     # TODO: write function to find the factorial of a number
-    pass
+    """Function to find the factorial of a number
+
+    Parameters
+    ----------
+    n : int
+        digit to find the factorial 
+
+    Returns
+    -------
+    int
+        n!
+    """
+
+    if n < 0: 
+        return "Negative factorials are not allowed "
+    result = 1
+    for i in range(1, n + 1):
+        result *= i
+    return result
 
 
 def is_prime(n: int) -> bool:
-    # TODO: write function to check if a number is prime
-    pass
+    """Function to check if a number is prime
+
+    Parameters
+    ----------
+    n : int
+        Number to check
+
+    Returns
+    -------
+    bool
+        True if the number is prime, false if the number is not prime 
+    """
+    if n < 2:
+        return False
+    for i in range(2, int(n ** 0.5) + 1):  
+        if n % i == 0:
+            return False
+    return True
+
 
 
 def is_palindrome(word: str) -> bool:
-    # TODO: write function to check if a word is a palindrome
-    pass
+    """Function to check if a word is a palindrome
+
+    Parameters
+    ----------
+    word : str
+        the word to check
+
+    Returns
+    -------
+    bool
+        True if the word is palidrome, false if the word is not palidrome 
+    """
+    word = word.lower().replace(" ", "")
+    return word == word[::-1]
 
 
 def reverse_string(string: str) -> str:
-    # TODO: write function to reverse a string
-    pass
+    """Function to reverse a string
+
+    Parameters
+    ----------
+    word : str
+        string to reverse
+
+    Returns
+    -------
+    str
+        reversed string 
+    """
+    return string[::-1]
 
 
 def list_sum(numbers: list) -> int:
-    # TODO: write function to sum a list of numbers
-    pass
+    """Function to sum a list of numbers
+
+    Parameters
+    ----------
+    numbers : list
+
+    Returns
+    -------
+    int
+        sum of the numbers in the list
+    """
+    return sum(numbers)
 
 
 def list_product(numbers: list) -> int:
-    # TODO: write function to multiply a list of numbers
-    pass
+    """Function to multiply a list of numbers
+
+    Parameters
+    ----------
+    numbers : list
+
+    Returns
+    -------
+    int
+        multiply of the numbers in the list
+    """
+    result = 1
+    for num in numbers:
+        result *= num
+    return result
