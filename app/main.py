@@ -316,6 +316,7 @@ def is_palindrome(word: str) -> bool:
     ValueError
         If the word is empty
     """
+    word = ''.join(char.lower() for char in word if char.isalnum()) # I wanted to make it so that phrases also count
     if not word:
         raise ValueError("Cannot check palindrome for an empty string")
     return word == word[::-1]
