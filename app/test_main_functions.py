@@ -5,7 +5,7 @@ import pytest
 
 from unittest import mock
 
-from .main import add, divide, validate_no_null_values, db_query, subtract
+from .main import add, divide, validate_no_null_values, db_query, subtract, square, is_even, find_max, find_min, find_mean, find_median, find_mode, factorial, is_prime, is_palindrome, reverse_string, list_sum, list_product 
 
 
 def test_add():
@@ -45,70 +45,198 @@ def test_db_query():
 
 # Alejandro Vergara
 def test_subtract():
-    pass
+    """Test cases for the subtract function."""
+    assert subtract(5, 3) == 2
+    assert subtract(-1, 1) == -2
+    assert subtract(0, 0) == 0
 
 
 def test_square():
-    # TODO: write the tests cases for the square function
-    pass
+    """Test cases for the square function."""
+    assert square(2) == 4
+    assert square(-2) == 4
+    assert square(0) == 0
 
 
 
 def test_is_even():
-    # TODO: write the tests cases for the is_even function
-    pass
-
+    """Test cases for the is_even function."""
+    assert is_even(2) == True
+    assert is_even(3) == False
+    assert is_even(0) == True
+    assert is_even(-2) == True
 
 def test_find_max():
-    # TODO: write the tests cases for the find_max function
-    pass
+    """Test cases for the find_max function."""
+    with pytest.raises(
+        ValueError
+    ):
+        numbers = []
+        find_max(numbers)
+
+    with pytest.raises(
+        ValueError
+    ):
+        numbers = ["a","b","c"]
+        find_max(numbers)
+    
+    assert find_max([1, 2, 3, 4, 5]) == 5
+    assert find_max([2]) == 2
+    assert find_max([-2,-4,-72]) == -2
 
 
 def test_find_min():
-    # TODO: write the tests cases for the find_min function
-    pass
+    """Test cases for the find_min function."""
+    with pytest.raises(
+        ValueError
+    ):
+        numbers = []
+        find_min(numbers)
+
+    with pytest.raises(
+        ValueError
+    ):
+        numbers = ["a","b","c"]
+        find_min(numbers)
+    
+    assert find_min([1, 2, 3, 4, 5]) == 1
+    assert find_min([4, 2, 9, -1, 6]) == -1
+    assert find_min([4]) == 4
 
 
 def test_find_mean():
-    # TODO: write the tests cases for the find_mean function
-    pass
+    """Test cases for the find_mean function."""
+    with pytest.raises(
+        ValueError
+    ):
+        numbers = []
+        find_mean(numbers)
+
+    with pytest.raises(
+        ValueError
+    ):
+        numbers = ["a","b","c"]
+        find_mean(numbers)
+     
+    assert find_mean([1, 2, 3, 4, 5]) == 3
+    assert find_mean([5]) == 5
 
 
 def test_find_median():
-    # TODO: write the tests cases for the find_median function
-    pass
+    """Test cases for the find_median function."""
+    with pytest.raises(
+        ValueError
+    ):
+        numbers = []
+        find_median(numbers)
+
+    with pytest.raises(
+        ValueError
+    ):
+        numbers = ["a","b","c"]
+        find_median(numbers)
+    
+    assert find_median([1, 2, 3, 4, 5]) == 3
+    assert find_median([1, 2, 3, 4, 5, 6]) == 3.5
 
 
 def test_find_mode():
-    # TODO: write the tests cases for the find_mode function
-    pass
+    """Test cases for the find_mode function."""
+    with pytest.raises(
+        ValueError
+    ):
+        numbers = []
+        find_mode(numbers)
+
+    with pytest.raises(
+        ValueError
+    ):
+        numbers = ["a","b","c"]
+        find_mode(numbers)
+
+    with pytest.raises(
+        ValueError
+    ):
+        numbers = [1,2,3,4]
+        find_mode(numbers)
+    
+    assert find_mode([1, 2, 2, 3, 4, 5]) == 2
 
 
 def test_factorial():
-    # TODO: write the tests cases for the factorial function
-    pass
+    """Test cases for the factorial function."""
+    with pytest.raises(
+        ValueError
+    ):
+        factorial(-1)
+
+    assert factorial(3) == 6
+    assert factorial(0) == 1
 
 
 def test_is_prime():
-    # TODO: write the tests cases for the is_prime function
-    pass
+    """Test cases for the is_prime function."""
+    with pytest.raises(
+        ValueError
+    ):
+        is_prime(-1)
+    
+    assert is_prime(2) == True
+    assert is_prime(4) == False
+    assert is_prime(101) == True
 
 
 def test_is_palindrome():
-    # TODO: write the tests cases for the is_palindrome function
-    pass
+    """Test cases for the is_palindrome function."""
+    assert is_palindrome("Hola") == False
+    assert is_palindrome("Radar") == True
+    assert is_palindrome("madam") == True
 
 
 def test_reverse_string():
-    # TODO: write the tests cases for the reverse_string function
-    pass
+    """Test cases for the reverse_string function."""
+    assert reverse_string("Hola") == "aloH"
+    assert reverse_string("etl!") == "!lte"
+    assert reverse_string("") == ""
+    assert reverse_string("a") == "a"
+    assert reverse_string("6174") == "4716"
 
 
 def test_list_sum():
-    # TODO: write the tests cases for the list_sum function
-    pass
+    """Test cases for the list_sum function."""
+    with pytest.raises(
+        ValueError
+    ):
+        numbers = []
+        list_sum(numbers)
 
+    with pytest.raises(
+        ValueError
+    ):
+        numbers = ["a","b","c"]
+        list_sum(numbers)
+
+    assert list_sum([1,2,3,4]) == 10
+    assert list_sum([-1,-2,-3,-4])  == -10
+    assert list_sum([1,2,3,-4]) == 2
+    assert list_sum([1,2,-3,-4]) == -4
+    assert list_sum([1,6,-3,-4]) == 0
 
 def test_list_product():
-    # TODO: write the tests cases for the list_product function
-    pass
+    """Test cases for the list_product function."""
+    with pytest.raises(
+        ValueError
+    ):
+        numbers = []
+        list_product(numbers)
+
+    with pytest.raises(
+        ValueError
+    ):
+        numbers = ["a","b","c"]
+        list_product(numbers)
+    
+    assert list_product([1,2,3,4]) == 24
+    assert list_product([1,2,3,-4]) == -24
+    assert list_product([1,2,-3,-4]) == 24
+    assert list_product([1,2,0,-4]) == 0

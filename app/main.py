@@ -1,6 +1,8 @@
 """ main functions to explain unit testing"""
 
 import pandas as pd
+import statistics
+import math
 
 
 def add(a: int, b: int) -> int:
@@ -77,69 +79,339 @@ def db_query() -> str:
 
 # Alejandro Vergara
 def subtract(a: int, b: int) -> int:
-    # TODO: write function to substract two numbers
-    pass
+    """Function to subtract two numbers
+
+    Parameters
+    ----------
+    a : int
+        first digit to add
+    b : int
+        second digit to add
+
+    Returns
+    -------
+    int
+        a '-' b
+    """
+    return a - b
 
 def square(a: int) -> int:
-    # TODO: write function to square a number
-    pass
+    """
+    Function to computes the square of a given integer.
+
+    Parameters
+    ----------
+    a : int
+        Integer to be squared.
+
+    Returns
+    -------
+    int
+        a '**' 2 : The square of the input integer.
+    """
+
+    return a**2
 
 
 def is_even(x: int) -> bool:
-    # TODO: write function to check if a number is even
-    pass
+
+    """
+    Determines whether a given integer is even.
+
+    Parameters
+    ----------
+    x : int
+        Integer to check.
+
+    Returns
+    -------
+    bool: 
+        True if the integer is even
+        False otherwise.
+    """
+
+    return x % 2 == 0
 
 
 def find_max(numbers: list) -> int:
-    # TODO: write function to find the maximum number in a list
-    pass
+    """
+    Finds the maximum number in a given list of integers.
+
+    Parameters
+    ----------
+    numbers : list
+        A list of integers.
+
+    Returns
+    -------
+    int:
+        Maximum integer in the list.
+
+    Raises
+    ------
+    ValueError
+        If the list is empty or contains non-integer elements.
+    """
+    if not numbers:
+        raise ValueError("The list cannot be empty.")
+    
+    if not all(isinstance(num, (int)) for num in numbers):
+        raise ValueError("All elements in the list must be integer.")
+
+    return max(numbers)
+
 
 
 def find_min(numbers: list) -> int:
-    # TODO: write function to find the minimum number in a list
-    pass
+    """
+    Finds the minimum number in a given list of integers.
+
+    Parameters
+    ----------
+    numbers : list
+        A list of integers.
+
+    Returns
+    -------
+    int:
+        Minimum integer in the list.
+
+    Raises
+    ------
+    ValueError
+        If the list is empty or contains non-integer elements.
+    """
+    if not numbers:
+        raise ValueError("The list cannot be empty.")
+    
+    if not all(isinstance(num, (int)) for num in numbers):
+        raise ValueError("All elements in the list must be integer.")
+
+    return min(numbers)
 
 
 def find_mean(numbers: list) -> float:
-    # TODO: write function to find the mean of a list of numbers
-    pass
+    """
+    Calculates the mean (average) of a given list of numbers.
+
+    Parameters
+    ----------
+    numbers : list
+        A list containing integer values.
+
+    Returns
+    -------
+    float
+        The mean of the numbers in the list.
+
+    Raises
+    ------
+    ValueError
+        If the list is empty or contains non-numeric elements.
+    """
+    if not numbers:
+        raise ValueError("The list cannot be empty.")
+
+    if not all(isinstance(num, (int, float)) for num in numbers):
+        raise ValueError("All elements in the list must be integer.")
+
+    return sum(numbers) / len(numbers)
 
 
 def find_median(numbers: list) -> float:
-    # TODO: write function to find the median of a list of numbers
-    pass
+    """Calculate the median of a given list of numbers.
+
+    Parameters
+    ----------
+    numbers : list
+        A list containing integer values.
+
+    Returns
+    -------
+    float
+        The median of the numbers in the list.
+
+    Raises
+    ------
+    ValueError
+        If the list is empty or contains non-numeric elements.
+    """
+    if not numbers:
+        raise ValueError("The list cannot be empty.")
+
+    if not all(isinstance(num, (int, float)) for num in numbers):
+        raise ValueError("All elements in the list must be integer.")
+
+    return statistics.median(numbers)
 
 
 def find_mode(numbers: list) -> int:
-    # TODO: write function to find the mode of a list of numbers
-    pass
+    """Calculate the mode of a given list of numbers.
+
+    Parameters
+    ----------
+    numbers : list
+        A list containing integer values.
+
+    Returns
+    -------
+    float
+        The mode of the numbers in the list.
+
+    Raises
+    ------
+    ValueError
+        If the list is empty or contains non-numeric elements.
+    """
+    if not numbers:
+        raise ValueError("The list cannot be empty.")
+
+    if not all(isinstance(num, (int)) for num in numbers):
+        raise ValueError("All elements in the list must be integer.")
+    
+    freq_counts = {num: numbers.count(num) for num in set(numbers)}
+    
+    if len(set(freq_counts.values())) == 1:
+        raise ValueError("There is no mode in the list.")
+
+    return statistics.mode(numbers)
 
 
 def factorial(n: int) -> int:
-    # TODO: write function to find the factorial of a number
-    pass
+    """Calculate the factorial of a given non-negative integer.
+
+    Parameters
+    ----------
+    n : int
+        A non-negative integer.
+
+    Returns
+    -------
+    int
+        The factorial of the given number.
+
+    Raises
+    ------
+    ValueError
+        If n is negative.
+    """
+    if n < 0:
+        raise ValueError("n must be a non-negative integer.")
+
+    return math.factorial(n)
 
 
 def is_prime(n: int) -> bool:
-    # TODO: write function to check if a number is prime
-    pass
+    """Check if a number is prime.
+
+    Parameters
+    ----------
+    n : int
+        The number to check.
+
+    Returns
+    -------
+    bool
+        True if the number is prime, False otherwise.
+
+    Raises
+    ------
+    ValueError
+        If n is less than 2.
+    """
+    if n < 2:
+        raise ValueError("n must be greater than or equal to 2.")
+
+    for i in range(2, n):
+        if n % i == 0:
+            return False
+    return True
 
 
 def is_palindrome(word: str) -> bool:
-    # TODO: write function to check if a word is a palindrome
-    pass
+    """Check if a word is a palindrome.
+
+    Parameters
+    ----------
+    word : str
+        The word to check.
+
+    Returns
+    -------
+    bool
+        True if the word is a palindrome, False otherwise.
+    """
+    return word.lower() == word.lower()[::-1]
 
 
 def reverse_string(string: str) -> str:
-    # TODO: write function to reverse a string
-    pass
+    """Reverse the characters of a string.
+
+    Parameters
+    ----------
+    string : str
+        The string to reverse.
+
+    Returns
+    -------
+    str
+        The reversed string.
+    """
+    return string[::-1]
 
 
 def list_sum(numbers: list) -> int:
-    # TODO: write function to sum a list of numbers
-    pass
+    """Calculate the sum of all numbers in a list.
+
+    Parameters
+    ----------
+    numbers : list
+        A list of integer values.
+
+    Returns
+    -------
+    int
+        The sum of the numbers in the list.
+
+    Raises
+    ------
+    ValueError
+        If the list contains non-numeric elements.
+    """
+    if not numbers:
+        raise ValueError("The list cannot be empty.")
+
+    if not all(isinstance(num, (int, float)) for num in numbers):
+        raise ValueError("All elements in the list must be integer.")
+
+    return sum(numbers)
 
 
 def list_product(numbers: list) -> int:
-    # TODO: write function to multiply a list of numbers
-    pass
+    """Calculate the product of all numbers in a list.
+
+    Parameters
+    ----------
+    numbers : list
+        A list of integer values.
+
+    Returns
+    -------
+    int
+        The product of the numbers in the list.
+
+    Raises
+    ------
+    ValueError
+        If the list contains non-numeric elements.
+    """
+    if not numbers:
+        raise ValueError("The list cannot be empty.")
+    
+    if not all(isinstance(num, (int, float)) for num in numbers):
+        raise ValueError("All elements in the list must be integer.")
+
+    product = 1
+    for num in numbers:
+        product *= num
+    return product
