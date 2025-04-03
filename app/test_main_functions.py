@@ -5,7 +5,7 @@ import pytest
 
 from unittest import mock
 
-from .main import add, divide, validate_no_null_values, db_query, subtract
+from .main import *
 
 
 def test_add():
@@ -43,72 +43,101 @@ def test_db_query():
         assert db_query() == 'DATA: [1, 2, 3]'
 
 
-# Alejandro Vergara
+# Nicolas Cuaran
 def test_subtract():
-    pass
-
+    """Test cases for the subtract function."""
+    assert subtract(5, 3) == 2
+    assert subtract(3, 5) == -2
+    assert subtract(0, 0) == 0
+    assert subtract(-2, -3) == 1
 
 def test_square():
-    # TODO: write the tests cases for the square function
-    pass
+    """Test cases for the square function."""
+    assert square(2) == 4
+    assert square(-3) == 9
+    assert square(0) == 0
 
 
 
 def test_is_even():
-    # TODO: write the tests cases for the is_even function
-    pass
-
+    """Test cases for the is_even function."""
+    assert is_even(2) is True
+    assert is_even(3) is False
+    assert is_even(0) is True
 
 def test_find_max():
-    # TODO: write the tests cases for the find_max function
-    pass
-
+    """Test cases for the find_max function."""
+    assert find_max([1, 2, 3, 4, 5]) == 5
+    assert find_max([-10, -5, 0, -1]) == 0
+    assert find_max([100]) == 100
+    with pytest.raises(ValueError):
+        find_max([])
 
 def test_find_min():
-    # TODO: write the tests cases for the find_min function
-    pass
-
+    """Test cases for the find_min function."""
+    assert find_min([1, 2, 3, 4, 5]) == 1
+    assert find_min([-10, -5, 0, -1]) == -10
+    assert find_min([100]) == 100
+    with pytest.raises(ValueError):
+        find_min([])
 
 def test_find_mean():
-    # TODO: write the tests cases for the find_mean function
-    pass
-
+    """Test cases for the find_mean function."""
+    assert find_median([1, 2, 3, 4, 5]) == 3
+    assert find_median([1, 2, 3, 4, 5, 6]) == 3.5
+    assert find_median([10, 20, 30, 40, 50]) == 30
+    assert find_median([-10, -5, 0, 5, 10]) == 0
+    assert find_median([100]) == 100
+    with pytest.raises(ValueError):
+        find_median([])
 
 def test_find_median():
-    # TODO: write the tests cases for the find_median function
-    pass
-
+    """Test cases for the find_median function."""
+    assert find_median([1, 2, 3, 4, 5]) == 3
+    assert find_median([1, 2, 3, 4, 5, 6]) == 3.5
+    assert find_median([100]) == 100
+    with pytest.raises(ValueError):
+        find_median([])    
 
 def test_find_mode():
-    # TODO: write the tests cases for the find_mode function
-    pass
-
+    """Test cases for the find_mode function."""
+    assert find_mode([1, 2, 2, 3, 4]) == 2
+    assert find_mode([100]) == 100
+    assert find_mode([3, 3, 3, 3, 3]) == 3
+    with pytest.raises(ValueError):
+        find_mode([])
 
 def test_factorial():
-    # TODO: write the tests cases for the factorial function
-    pass
-
+    """Test cases for the factorial function."""
+    assert factorial(5) == 120
+    assert factorial(7) == 5040
+    with pytest.raises(ValueError):
+        factorial(-3)
 
 def test_is_prime():
-    # TODO: write the tests cases for the is_prime function
-    pass
-
+    """Test cases for the is_prime function."""
+    assert is_prime(3) is True
+    assert is_prime(4) is False
 
 def test_is_palindrome():
-    # TODO: write the tests cases for the is_palindrome function
-    pass
-
+    """Test cases for the is_palindrome function."""
+    assert is_palindrome("level") is True
+    assert is_palindrome("hello") is False
 
 def test_reverse_string():
-    # TODO: write the tests cases for the reverse_string function
-    pass
+    """Test cases for the reverse_string function."""
+    assert reverse_string("hello") == "olleh"
+    assert reverse_string("12345") == "54321"
 
 
 def test_list_sum():
-    # TODO: write the tests cases for the list_sum function
-    pass
+    """Test cases for the list_sum function."""
+    assert list_sum([1, 2, 3, 4, 5]) == 15
+    assert list_sum([10, -5, 3, 7]) == 15
 
 
 def test_list_product():
-    # TODO: write the tests cases for the list_product function
-    pass
+    """Test cases for the list_product function."""
+    assert list_product([1, 2, 3, 4, 5]) == 120
+    assert list_product([10, -5, 3, 7]) == -1050
+    assert list_product([1, 0, 2, 3]) == 0
