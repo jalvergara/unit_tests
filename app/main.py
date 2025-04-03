@@ -1,6 +1,7 @@
 """ main functions to explain unit testing"""
 
 import pandas as pd
+from collections import Counter
 
 
 def add(a: int, b: int) -> int:
@@ -75,7 +76,7 @@ def db_query() -> str:
     return "DATA: [1, 2, 3]"
 
 
-# TODO: PENDING FUNCTIONS:
+# FUNCIONES IMPLEMENTADAS:
 
 def subtract(a: int, b: int) -> int:
     """Function to subtract two numbers
@@ -92,8 +93,8 @@ def subtract(a: int, b: int) -> int:
     int
         The result of a - b
     """
-    # TODO: write function to substract two numbers
-    pass
+    return a - b
+
 
 def square(a: int) -> int:
     """Function to calculate the square of a number
@@ -108,8 +109,7 @@ def square(a: int) -> int:
     int
         The square of a
     """
-    # TODO: write function to square a number
-    pass
+    return a * a
 
 
 def is_even(x: int) -> bool:
@@ -125,8 +125,7 @@ def is_even(x: int) -> bool:
     bool
         True if x is even, False otherwise
     """
-    # TODO: write function to check if a number is even
-    pass
+    return x % 2 == 0
 
 
 def find_max(numbers: list) -> int:
@@ -141,9 +140,15 @@ def find_max(numbers: list) -> int:
     -------
     int
         The maximum number in the list
+
+    Raises
+    ------
+    ValueError
+        If the list is empty
     """
-    # TODO: write function to find the maximum number in a list
-    pass
+    if not numbers:
+        raise ValueError("Cannot find maximum of an empty list")
+    return max(numbers)
 
 
 def find_min(numbers: list) -> int:
@@ -158,9 +163,15 @@ def find_min(numbers: list) -> int:
     -------
     int
         The minimum number in the list
+
+    Raises
+    ------
+    ValueError
+        If the list is empty
     """
-    # TODO: write function to find the minimum number in a list
-    pass
+    if not numbers:
+        raise ValueError("Cannot find minimum of an empty list")
+    return min(numbers)
 
 
 def find_mean(numbers: list) -> float:
@@ -175,9 +186,15 @@ def find_mean(numbers: list) -> float:
     -------
     float
         The mean of the numbers in the list
+
+    Raises
+    ------
+    ValueError
+        If the list is empty
     """
-    # TODO: write function to find the mean of a list of numbers
-    pass
+    if not numbers:
+        raise ValueError("Cannot calculate mean of an empty list")
+    return sum(numbers) / len(numbers)
 
 
 def find_median(numbers: list) -> float:
@@ -192,9 +209,20 @@ def find_median(numbers: list) -> float:
     -------
     float
         The median of the numbers in the list
+
+    Raises
+    ------
+    ValueError
+        If the list is empty
     """
-    # TODO: write function to find the median of a list of numbers
-    pass
+    if not numbers:
+        raise ValueError("Cannot calculate median of an empty list")
+    sorted_numbers = sorted(numbers)
+    n = len(sorted_numbers)
+    if n % 2 == 0:
+        return (sorted_numbers[n//2 - 1] + sorted_numbers[n//2]) / 2
+    else:
+        return sorted_numbers[n//2]
 
 
 def find_mode(numbers: list) -> int:
@@ -209,9 +237,16 @@ def find_mode(numbers: list) -> int:
     -------
     int
         The mode of the numbers in the list
+
+    Raises
+    ------
+    ValueError
+        If the list is empty
     """
-    # TODO: write function to find the mode of a list of numbers
-    pass
+    if not numbers:
+        raise ValueError("Cannot calculate mode of an empty list")
+    counter = Counter(numbers)
+    return counter.most_common(1)[0][0]
 
 
 def factorial(n: int) -> int:
@@ -226,9 +261,20 @@ def factorial(n: int) -> int:
     -------
     int
         The factorial of n
+
+    Raises
+    ------
+    ValueError
+        If n is negative
     """
-    # TODO: write function to find the factorial of a number
-    pass
+    if n < 0:
+        raise ValueError("Factorial is not defined for negative numbers")
+    if n == 0:
+        return 1
+    result = 1
+    for i in range(1, n + 1):
+        result *= i
+    return result
 
 
 def is_prime(n: int) -> bool:
@@ -244,8 +290,12 @@ def is_prime(n: int) -> bool:
     bool
         True if n is prime, False otherwise
     """
-    # TODO: write function to check if a number is prime
-    pass
+    if n <= 1:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
 
 
 def is_palindrome(word: str) -> bool:
@@ -260,9 +310,15 @@ def is_palindrome(word: str) -> bool:
     -------
     bool
         True if word is a palindrome, False otherwise
+
+    Raises
+    ------
+    ValueError
+        If the word is empty
     """
-    # TODO: write function to check if a word is a palindrome
-    pass
+    if not word:
+        raise ValueError("Cannot check palindrome for an empty string")
+    return word == word[::-1]
 
 
 def reverse_string(string: str) -> str:
@@ -277,9 +333,15 @@ def reverse_string(string: str) -> str:
     -------
     str
         The reversed string
+
+    Raises
+    ------
+    ValueError
+        If the string is empty
     """
-    # TODO: write function to reverse a string
-    pass
+    if not string:
+        raise ValueError("Cannot reverse an empty string")
+    return string[::-1]
 
 
 def list_sum(numbers: list) -> int:
@@ -294,9 +356,15 @@ def list_sum(numbers: list) -> int:
     -------
     int
         The sum of the numbers in the list
+
+    Raises
+    ------
+    ValueError
+        If the list is empty
     """
-    # TODO: write function to sum a list of numbers
-    pass
+    if not numbers:
+        raise ValueError("Cannot sum an empty list")
+    return sum(numbers)
 
 
 def list_product(numbers: list) -> int:
@@ -311,6 +379,15 @@ def list_product(numbers: list) -> int:
     -------
     int
         The product of the numbers in the list
+
+    Raises
+    ------
+    ValueError
+        If the list is empty
     """
-    # TODO: write function to multiply a list of numbers
-    pass
+    if not numbers:
+        raise ValueError("Cannot calculate product of an empty list")
+    result = 1
+    for num in numbers:
+        result *= num
+    return result
